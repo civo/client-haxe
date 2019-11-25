@@ -1,0 +1,44 @@
+{
+  "name": "civo",
+  "version": "0.1.0",
+  "description": "Civo NodeJS library tests",
+  "main": "main.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/civo/client-haxe.git"
+  },
+  "author": "Jahred Love",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/civo/client-haxe/issues"
+  },
+  "homepage": "https://github.com/civo/client-haxe#readme",
+  "devDependencies": {
+    "@babel/preset-env": "^7.5.5",
+    "babel-jest": "^24.8.0",
+    "jest": "^24.8.0"
+  },
+  "dependencies": {
+    "core-js": "^2.6.10",
+    "core-js3": "npm:core-js@^3.0.0"
+  },
+  "jest": {
+    "clearMocks": true,
+    "rootDir": "tests"
+  },
+  "babel": {
+    "presets": [
+      [
+        "@babel/env",
+        {
+          "targets": {
+            "node": "10"
+          }
+        }
+      ]
+    ]
+  }
+}

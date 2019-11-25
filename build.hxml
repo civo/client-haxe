@@ -1,0 +1,29 @@
+-cp src
+-dce full
+-main Civo
+-lib tink_http
+
+--each
+
+-lib hxnodejs 
+-js bin/nodejs/main.js
+
+--next
+
+-php bin/php
+
+--next
+
+-cpp bin/cpp
+
+--next
+
+-lua bin/lua/civo.lua
+
+# --next
+
+# -java bin/java
+
+# --next
+
+# -cs bin/cs

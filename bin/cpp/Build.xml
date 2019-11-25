@@ -1,0 +1,1381 @@
+<xml>
+<set name="HXCPP_API_LEVEL" value="400" />
+<files id="haxe">
+<compilerflag value="-Iinclude"/>
+  <file name="src/tink/url/_Path/Path_Impl_.cpp" >
+   <depend name="include/StringTools.h"/>
+   <depend name="include/tink/url/_Path/Path_Impl_.h"/>
+  </file>
+  <file name="src/tink/url/_Host/Host_Impl_.cpp" >
+   <depend name="include/Std.h"/>
+   <depend name="include/tink/url/_Host/Host_Impl_.h"/>
+  </file>
+  <file name="src/tink/streams/Step.cpp" >
+   <depend name="include/tink/core/TypedError.h"/>
+   <depend name="include/tink/streams/Step.h"/>
+   <depend name="include/tink/streams/StreamObject.h"/>
+  </file>
+  <file name="src/tink/streams/FutureStream.cpp" >
+   <depend name="include/tink/core/LinkObject.h"/>
+   <depend name="include/tink/core/_Future/FutureObject.h"/>
+   <depend name="include/tink/core/_Future/Future_Impl_.h"/>
+   <depend name="include/tink/streams/Conclusion.h"/>
+   <depend name="include/tink/streams/FutureStream.h"/>
+   <depend name="include/tink/streams/StreamBase.h"/>
+   <depend name="include/tink/streams/StreamObject.h"/>
+  </file>
+  <file name="src/tink/streams/_Stream/Reducer_Impl_.cpp" >
+   <depend name="include/tink/core/_Future/FutureObject.h"/>
+   <depend name="include/tink/streams/_Stream/Reducer_Impl_.h"/>
+  </file>
+  <file name="src/tink/streams/_Stream/Handler_Impl_.cpp" >
+   <depend name="include/tink/core/_Future/FutureObject.h"/>
+   <depend name="include/tink/streams/_Stream/Handler_Impl_.h"/>
+  </file>
+  <file name="src/tink/streams/Single.cpp" >
+   <depend name="include/tink/core/TypedError.h"/>
+   <depend name="include/tink/core/_Future/FutureObject.h"/>
+   <depend name="include/tink/core/_Lazy/LazyObject.h"/>
+   <depend name="include/tink/streams/Conclusion.h"/>
+   <depend name="include/tink/streams/Empty.h"/>
+   <depend name="include/tink/streams/Handled.h"/>
+   <depend name="include/tink/streams/Single.h"/>
+   <depend name="include/tink/streams/StreamBase.h"/>
+   <depend name="include/tink/streams/StreamObject.h"/>
+  </file>
+  <file name="src/tink/streams/_Stream/ErrorStream.cpp" >
+   <depend name="include/tink/core/TypedError.h"/>
+   <depend name="include/tink/core/_Future/FutureObject.h"/>
+   <depend name="include/tink/core/_Future/SyncFuture.h"/>
+   <depend name="include/tink/core/_Lazy/LazyConst.h"/>
+   <depend name="include/tink/core/_Lazy/LazyObject.h"/>
+   <depend name="include/tink/streams/Conclusion.h"/>
+   <depend name="include/tink/streams/StreamBase.h"/>
+   <depend name="include/tink/streams/StreamObject.h"/>
+   <depend name="include/tink/streams/_Stream/ErrorStream.h"/>
+  </file>
+  <file name="src/tink/streams/_Stream/CloggedStream.cpp" >
+   <depend name="include/tink/core/TypedError.h"/>
+   <depend name="include/tink/core/_Future/FutureObject.h"/>
+   <depend name="include/tink/core/_Future/SyncFuture.h"/>
+   <depend name="include/tink/core/_Lazy/LazyConst.h"/>
+   <depend name="include/tink/core/_Lazy/LazyObject.h"/>
+   <depend name="include/tink/streams/Conclusion.h"/>
+   <depend name="include/tink/streams/StreamBase.h"/>
+   <depend name="include/tink/streams/StreamObject.h"/>
+   <depend name="include/tink/streams/_Stream/CloggedStream.h"/>
+  </file>
+  <file name="src/tink/streams/Reduction.cpp" >
+   <depend name="include/tink/core/TypedError.h"/>
+   <depend name="include/tink/streams/Reduction.h"/>
+   <depend name="include/tink/streams/StreamObject.h"/>
+  </file>
+  <file name="src/tink/streams/ReductionStep.cpp" >
+   <depend name="include/tink/core/TypedError.h"/>
+   <depend name="include/tink/streams/ReductionStep.h"/>
+  </file>
+  <file name="src/tink/streams/Conclusion.cpp" >
+   <depend name="include/tink/core/TypedError.h"/>
+   <depend name="include/tink/streams/Conclusion.h"/>
+   <depend name="include/tink/streams/StreamObject.h"/>
+  </file>
+  <file name="src/tink/streams/Handled.cpp" >
+   <depend name="include/tink/core/TypedError.h"/>
+   <depend name="include/tink/streams/Handled.h"/>
+  </file>
+  <file name="src/tink/streams/_Stream/RegroupStream.cpp" >
+   <depend name="include/haxe/ds/Option.h"/>
+   <depend name="include/tink/core/TypedError.h"/>
+   <depend name="include/tink/core/_Future/FutureObject.h"/>
+   <depend name="include/tink/core/_Lazy/LazyFunc.h"/>
+   <depend name="include/tink/core/_Lazy/LazyObject.h"/>
+   <depend name="include/tink/streams/Conclusion.h"/>
+   <depend name="include/tink/streams/Empty.h"/>
+   <depend name="include/tink/streams/Handled.h"/>
+   <depend name="include/tink/streams/RegroupResult.h"/>
+   <depend name="include/tink/streams/RegroupStatus.h"/>
+   <depend name="include/tink/streams/StreamBase.h"/>
+   <depend name="include/tink/streams/StreamObject.h"/>
+   <depend name="include/tink/streams/_Stream/CloggedStream.h"/>
+   <depend name="include/tink/streams/_Stream/CompoundStream.h"/>
+   <depend name="include/tink/streams/_Stream/Handler_Impl_.h"/>
+   <depend name="include/tink/streams/_Stream/RegroupStream.h"/>
+   <depend name="include/tink/streams/_Stream/Stream_Impl_.h"/>
+  </file>
+  <file name="src/tink/streams/_Stream/CompoundStream.cpp" >
+   <depend name="include/tink/core/LinkObject.h"/>
+   <depend name="include/tink/core/TypedError.h"/>
+   <depend name="include/tink/core/_Future/FutureObject.h"/>
+   <depend name="include/tink/core/_Future/Future_Impl_.h"/>
+   <depend name="include/tink/streams/Conclusion.h"/>
+   <depend name="include/tink/streams/Empty.h"/>
+   <depend name="include/tink/streams/StreamBase.h"/>
+   <depend name="include/tink/streams/StreamObject.h"/>
+   <depend name="include/tink/streams/_Stream/CompoundStream.h"/>
+  </file>
+  <file name="src/tink/streams/_Stream/Regrouper_Impl_.cpp" >
+   <depend name="include/tink/core/_Future/FutureObject.h"/>
+   <depend name="include/tink/core/_Future/SyncFuture.h"/>
+   <depend name="include/tink/core/_Lazy/LazyConst.h"/>
+   <depend name="include/tink/core/_Lazy/LazyObject.h"/>
+   <depend name="include/tink/streams/RegroupResult.h"/>
+   <depend name="include/tink/streams/RegroupStatus.h"/>
+   <depend name="include/tink/streams/_Stream/Regrouper_Impl_.h"/>
+  </file>
+  <file name="src/tink/streams/RegroupResult.cpp" >
+   <depend name="include/haxe/ds/Option.h"/>
+   <depend name="include/tink/core/TypedError.h"/>
+   <depend name="include/tink/streams/RegroupResult.h"/>
+   <depend name="include/tink/streams/StreamObject.h"/>
+  </file>
+  <file name="src/tink/streams/RegroupStatus.cpp" >
+   <depend name="include/tink/core/TypedError.h"/>
+   <depend name="include/tink/streams/RegroupStatus.h"/>
+  </file>
+  <file name="src/tink/streams/_Stream/Stream_Impl_.cpp" >
+   <depend name="include/tink/core/TypedError.h"/>
+   <depend name="include/tink/core/_Future/FutureObject.h"/>
+   <depend name="include/tink/core/_Lazy/LazyConst.h"/>
+   <depend name="include/tink/core/_Lazy/LazyObject.h"/>
+   <depend name="include/tink/streams/FutureStream.h"/>
+   <depend name="include/tink/streams/Single.h"/>
+   <depend name="include/tink/streams/StreamBase.h"/>
+   <depend name="include/tink/streams/StreamObject.h"/>
+   <depend name="include/tink/streams/_Stream/ErrorStream.h"/>
+   <depend name="include/tink/streams/_Stream/Stream_Impl_.h"/>
+  </file>
+  <file name="src/tink/io/std/OutputSink.cpp" >
+   <depend name="include/haxe/io/Bytes.h"/>
+   <depend name="include/haxe/io/Eof.h"/>
+   <depend name="include/haxe/io/Error.h"/>
+   <depend name="include/haxe/io/Output.h"/>
+   <depend name="include/tink/_Chunk/Chunk_Impl_.h"/>
+   <depend name="include/tink/chunk/ByteChunk.h"/>
+   <depend name="include/tink/chunk/ChunkBase.h"/>
+   <depend name="include/tink/chunk/ChunkObject.h"/>
+   <depend name="include/tink/core/LinkObject.h"/>
+   <depend name="include/tink/core/Noise.h"/>
+   <depend name="include/tink/core/Outcome.h"/>
+   <depend name="include/tink/core/TypedError.h"/>
+   <depend name="include/tink/core/_Future/FutureObject.h"/>
+   <depend name="include/tink/core/_Future/Future_Impl_.h"/>
+   <depend name="include/tink/core/_Lazy/LazyFunc.h"/>
+   <depend name="include/tink/core/_Lazy/LazyObject.h"/>
+   <depend name="include/tink/io/PipeResult.h"/>
+   <depend name="include/tink/io/PipeResultTools.h"/>
+   <depend name="include/tink/io/SinkBase.h"/>
+   <depend name="include/tink/io/SinkObject.h"/>
+   <depend name="include/tink/io/WorkerObject.h"/>
+   <depend name="include/tink/io/_Worker/Worker_Impl_.h"/>
+   <depend name="include/tink/io/std/OutputSink.h"/>
+   <depend name="include/tink/streams/Conclusion.h"/>
+   <depend name="include/tink/streams/Handled.h"/>
+   <depend name="include/tink/streams/StreamObject.h"/>
+   <depend name="include/tink/streams/_Stream/Handler_Impl_.h"/>
+  </file>
+  <file name="src/tink/io/std/InputSource.cpp" >
+   <depend name="include/Std.h"/>
+   <depend name="include/haxe/io/Bytes.h"/>
+   <depend name="include/haxe/io/Eof.h"/>
+   <depend name="include/haxe/io/Error.h"/>
+   <depend name="include/haxe/io/Input.h"/>
+   <depend name="include/tink/_Chunk/Chunk_Impl_.h"/>
+   <depend name="include/tink/chunk/ByteChunk.h"/>
+   <depend name="include/tink/chunk/ChunkBase.h"/>
+   <depend name="include/tink/chunk/ChunkObject.h"/>
+   <depend name="include/tink/core/LinkObject.h"/>
+   <depend name="include/tink/core/TypedError.h"/>
+   <depend name="include/tink/core/_Future/FutureObject.h"/>
+   <depend name="include/tink/core/_Future/Future_Impl_.h"/>
+   <depend name="include/tink/core/_Lazy/LazyFunc.h"/>
+   <depend name="include/tink/core/_Lazy/LazyObject.h"/>
+   <depend name="include/tink/io/WorkerObject.h"/>
+   <depend name="include/tink/io/_Worker/Worker_Impl_.h"/>
+   <depend name="include/tink/io/std/InputSource.h"/>
+   <depend name="include/tink/streams/Generator.h"/>
+   <depend name="include/tink/streams/Step.h"/>
+   <depend name="include/tink/streams/StreamBase.h"/>
+   <depend name="include/tink/streams/StreamObject.h"/>
+  </file>
+  <file name="src/tink/streams/Generator.cpp" >
+   <depend name="include/tink/core/LinkObject.h"/>
+   <depend name="include/tink/core/TypedError.h"/>
+   <depend name="include/tink/core/_Future/FutureObject.h"/>
+   <depend name="include/tink/core/_Future/Future_Impl_.h"/>
+   <depend name="include/tink/streams/Conclusion.h"/>
+   <depend name="include/tink/streams/Generator.h"/>
+   <depend name="include/tink/streams/Handled.h"/>
+   <depend name="include/tink/streams/Step.h"/>
+   <depend name="include/tink/streams/StreamBase.h"/>
+   <depend name="include/tink/streams/StreamObject.h"/>
+  </file>
+  <file name="src/tink/io/_Worker/Worker_Impl_.cpp" >
+   <depend name="include/Std.h"/>
+   <depend name="include/tink/core/_Future/FutureObject.h"/>
+   <depend name="include/tink/core/_Lazy/LazyObject.h"/>
+   <depend name="include/tink/io/WorkerObject.h"/>
+   <depend name="include/tink/io/_Worker/EagerWorker.h"/>
+   <depend name="include/tink/io/_Worker/Worker_Impl_.h"/>
+  </file>
+  <file name="src/tink/io/_Worker/EagerWorker.cpp" >
+   <depend name="include/tink/core/_Future/FutureObject.h"/>
+   <depend name="include/tink/core/_Future/SyncFuture.h"/>
+   <depend name="include/tink/core/_Lazy/LazyConst.h"/>
+   <depend name="include/tink/core/_Lazy/LazyObject.h"/>
+   <depend name="include/tink/io/WorkerObject.h"/>
+   <depend name="include/tink/io/_Worker/EagerWorker.h"/>
+  </file>
+  <file name="src/tink/io/WorkerObject.cpp" >
+   <depend name="include/tink/core/_Future/FutureObject.h"/>
+   <depend name="include/tink/core/_Lazy/LazyObject.h"/>
+   <depend name="include/tink/io/WorkerObject.h"/>
+  </file>
+  <file name="src/tink/io/_StreamParser/StreamParser_Impl_.cpp" >
+   <depend name="include/tink/_Chunk/Chunk_Impl_.h"/>
+   <depend name="include/tink/chunk/ChunkCursor.h"/>
+   <depend name="include/tink/chunk/ChunkObject.h"/>
+   <depend name="include/tink/core/LinkObject.h"/>
+   <depend name="include/tink/core/Outcome.h"/>
+   <depend name="include/tink/core/TypedError.h"/>
+   <depend name="include/tink/core/_Future/FutureObject.h"/>
+   <depend name="include/tink/core/_Future/Future_Impl_.h"/>
+   <depend name="include/tink/core/_Future/SyncFuture.h"/>
+   <depend name="include/tink/core/_Lazy/LazyConst.h"/>
+   <depend name="include/tink/core/_Lazy/LazyObject.h"/>
+   <depend name="include/tink/io/ParseResult.h"/>
+   <depend name="include/tink/io/ParseStep.h"/>
+   <depend name="include/tink/io/StreamParserObject.h"/>
+   <depend name="include/tink/io/_Source/Source_Impl_.h"/>
+   <depend name="include/tink/io/_StreamParser/StreamParser_Impl_.h"/>
+   <depend name="include/tink/streams/Conclusion.h"/>
+   <depend name="include/tink/streams/Handled.h"/>
+   <depend name="include/tink/streams/Single.h"/>
+   <depend name="include/tink/streams/StreamBase.h"/>
+   <depend name="include/tink/streams/StreamObject.h"/>
+   <depend name="include/tink/streams/_Stream/Handler_Impl_.h"/>
+  </file>
+  <file name="src/tink/io/ParseResult.cpp" >
+   <depend name="include/tink/core/TypedError.h"/>
+   <depend name="include/tink/io/ParseResult.h"/>
+   <depend name="include/tink/streams/StreamObject.h"/>
+  </file>
+  <file name="src/tink/io/IdealSourceTools.cpp" >
+   <depend name="include/tink/chunk/ChunkObject.h"/>
+   <depend name="include/tink/core/_Future/FutureObject.h"/>
+   <depend name="include/tink/io/IdealSourceTools.h"/>
+   <depend name="include/tink/io/_Source/Source_Impl_.h"/>
+   <depend name="include/tink/streams/Reduction.h"/>
+   <depend name="include/tink/streams/StreamObject.h"/>
+  </file>
+  <file name="src/tink/io/RealSourceTools.cpp" >
+   <depend name="include/tink/chunk/ChunkObject.h"/>
+   <depend name="include/tink/core/MPair.h"/>
+   <depend name="include/tink/core/Outcome.h"/>
+   <depend name="include/tink/core/TypedError.h"/>
+   <depend name="include/tink/core/_Future/FutureObject.h"/>
+   <depend name="include/tink/io/ParseResult.h"/>
+   <depend name="include/tink/io/RealSourceTools.h"/>
+   <depend name="include/tink/io/StreamParserObject.h"/>
+   <depend name="include/tink/io/_Source/Source_Impl_.h"/>
+   <depend name="include/tink/io/_StreamParser/StreamParser_Impl_.h"/>
+   <depend name="include/tink/streams/Reduction.h"/>
+   <depend name="include/tink/streams/StreamObject.h"/>
+  </file>
+  <file name="src/tink/io/_Source/Source_Impl_.cpp" >
+   <depend name="include/haxe/ds/Option.h"/>
+   <depend name="include/tink/_Chunk/Chunk_Impl_.h"/>
+   <depend name="include/tink/chunk/ChunkObject.h"/>
+   <depend name="include/tink/core/_Future/FutureObject.h"/>
+   <depend name="include/tink/core/_Future/SyncFuture.h"/>
+   <depend name="include/tink/core/_Lazy/LazyConst.h"/>
+   <depend name="include/tink/core/_Lazy/LazyObject.h"/>
+   <depend name="include/tink/io/SinkObject.h"/>
+   <depend name="include/tink/io/_Source/Source_Impl_.h"/>
+   <depend name="include/tink/streams/Empty.h"/>
+   <depend name="include/tink/streams/ReductionStep.h"/>
+   <depend name="include/tink/streams/RegroupResult.h"/>
+   <depend name="include/tink/streams/StreamBase.h"/>
+   <depend name="include/tink/streams/StreamObject.h"/>
+   <depend name="include/tink/streams/_Stream/Reducer_Impl_.h"/>
+   <depend name="include/tink/streams/_Stream/Regrouper_Impl_.h"/>
+   <depend name="include/tink/streams/_Stream/Stream_Impl_.h"/>
+  </file>
+  <file name="src/tink/streams/Empty.cpp" >
+   <depend name="include/tink/core/_Future/FutureObject.h"/>
+   <depend name="include/tink/core/_Future/SyncFuture.h"/>
+   <depend name="include/tink/core/_Lazy/LazyConst.h"/>
+   <depend name="include/tink/core/_Lazy/LazyObject.h"/>
+   <depend name="include/tink/streams/Conclusion.h"/>
+   <depend name="include/tink/streams/Empty.h"/>
+   <depend name="include/tink/streams/StreamBase.h"/>
+   <depend name="include/tink/streams/StreamObject.h"/>
+  </file>
+  <file name="src/tink/streams/StreamBase.cpp" >
+   <depend name="include/tink/core/LinkObject.h"/>
+   <depend name="include/tink/core/TypedError.h"/>
+   <depend name="include/tink/core/_Future/FutureObject.h"/>
+   <depend name="include/tink/core/_Future/Future_Impl_.h"/>
+   <depend name="include/tink/streams/Conclusion.h"/>
+   <depend name="include/tink/streams/Handled.h"/>
+   <depend name="include/tink/streams/Reduction.h"/>
+   <depend name="include/tink/streams/ReductionStep.h"/>
+   <depend name="include/tink/streams/StreamBase.h"/>
+   <depend name="include/tink/streams/StreamObject.h"/>
+   <depend name="include/tink/streams/_Stream/CompoundStream.h"/>
+   <depend name="include/tink/streams/_Stream/Handler_Impl_.h"/>
+   <depend name="include/tink/streams/_Stream/RegroupStream.h"/>
+  </file>
+  <file name="src/tink/streams/StreamObject.cpp" >
+   <depend name="include/tink/core/_Future/FutureObject.h"/>
+   <depend name="include/tink/streams/StreamObject.h"/>
+  </file>
+  <file name="src/tink/io/_Sink/SinkYielding_Impl_.cpp" >
+   <depend name="include/haxe/io/Output.h"/>
+   <depend name="include/tink/io/SinkBase.h"/>
+   <depend name="include/tink/io/SinkObject.h"/>
+   <depend name="include/tink/io/WorkerObject.h"/>
+   <depend name="include/tink/io/_Sink/SinkYielding_Impl_.h"/>
+   <depend name="include/tink/io/_Worker/Worker_Impl_.h"/>
+   <depend name="include/tink/io/std/OutputSink.h"/>
+  </file>
+  <file name="src/tink/io/SinkBase.cpp" >
+   <depend name="include/tink/core/_Future/FutureObject.h"/>
+   <depend name="include/tink/io/SinkBase.h"/>
+   <depend name="include/tink/io/SinkObject.h"/>
+   <depend name="include/tink/streams/StreamObject.h"/>
+  </file>
+  <file name="src/tink/io/SinkObject.cpp" >
+   <depend name="include/tink/core/_Future/FutureObject.h"/>
+   <depend name="include/tink/io/SinkObject.h"/>
+   <depend name="include/tink/streams/StreamObject.h"/>
+  </file>
+  <file name="src/tink/io/PipeResultTools.cpp" >
+   <depend name="include/tink/chunk/ChunkObject.h"/>
+   <depend name="include/tink/core/TypedError.h"/>
+   <depend name="include/tink/core/_Lazy/LazyConst.h"/>
+   <depend name="include/tink/core/_Lazy/LazyObject.h"/>
+   <depend name="include/tink/io/PipeResult.h"/>
+   <depend name="include/tink/io/PipeResultTools.h"/>
+   <depend name="include/tink/streams/Conclusion.h"/>
+   <depend name="include/tink/streams/Single.h"/>
+   <depend name="include/tink/streams/StreamBase.h"/>
+   <depend name="include/tink/streams/StreamObject.h"/>
+  </file>
+  <file name="src/tink/io/PipeResult.cpp" >
+   <depend name="include/tink/core/TypedError.h"/>
+   <depend name="include/tink/io/PipeResult.h"/>
+   <depend name="include/tink/streams/StreamObject.h"/>
+  </file>
+  <file name="src/tink/http/containers/LocalContainer.cpp" >
+   <depend name="include/tink/core/NamedWith.h"/>
+   <depend name="include/tink/core/_Future/FutureObject.h"/>
+   <depend name="include/tink/core/_Future/SyncFuture.h"/>
+   <depend name="include/tink/core/_Lazy/LazyConst.h"/>
+   <depend name="include/tink/core/_Lazy/LazyObject.h"/>
+   <depend name="include/tink/http/Container.h"/>
+   <depend name="include/tink/http/HandlerObject.h"/>
+   <depend name="include/tink/http/Header.h"/>
+   <depend name="include/tink/http/HeaderField.h"/>
+   <depend name="include/tink/http/IncomingRequest.h"/>
+   <depend name="include/tink/http/Message.h"/>
+   <depend name="include/tink/http/ResponseHeaderBase.h"/>
+   <depend name="include/tink/http/_Response/OutgoingResponseData.h"/>
+   <depend name="include/tink/http/containers/LocalContainer.h"/>
+   <depend name="include/tink/io/_Source/Source_Impl_.h"/>
+   <depend name="include/tink/streams/StreamObject.h"/>
+  </file>
+  <file name="src/tink/http/clients/StdClient.cpp" >
+   <depend name="include/haxe/IMap.h"/>
+   <depend name="include/haxe/ds/StringMap.h"/>
+   <depend name="include/haxe/http/HttpBase.h"/>
+   <depend name="include/haxe/io/Bytes.h"/>
+   <depend name="include/haxe/io/Encoding.h"/>
+   <depend name="include/sys/Http.h"/>
+   <depend name="include/tink/_Url/Url_Impl_.h"/>
+   <depend name="include/tink/chunk/ByteChunk.h"/>
+   <depend name="include/tink/chunk/ChunkBase.h"/>
+   <depend name="include/tink/chunk/ChunkObject.h"/>
+   <depend name="include/tink/core/LinkObject.h"/>
+   <depend name="include/tink/core/NamedWith.h"/>
+   <depend name="include/tink/core/Outcome.h"/>
+   <depend name="include/tink/core/TypedError.h"/>
+   <depend name="include/tink/core/_Callback/Callback_Impl_.h"/>
+   <depend name="include/tink/core/_Future/FutureObject.h"/>
+   <depend name="include/tink/core/_Future/Future_Impl_.h"/>
+   <depend name="include/tink/core/_Lazy/LazyConst.h"/>
+   <depend name="include/tink/core/_Lazy/LazyFunc.h"/>
+   <depend name="include/tink/core/_Lazy/LazyObject.h"/>
+   <depend name="include/tink/http/ClientObject.h"/>
+   <depend name="include/tink/http/Header.h"/>
+   <depend name="include/tink/http/HeaderField.h"/>
+   <depend name="include/tink/http/IncomingResponse.h"/>
+   <depend name="include/tink/http/Message.h"/>
+   <depend name="include/tink/http/OutgoingRequest.h"/>
+   <depend name="include/tink/http/OutgoingRequestHeader.h"/>
+   <depend name="include/tink/http/RequestHeader.h"/>
+   <depend name="include/tink/http/ResponseHeaderBase.h"/>
+   <depend name="include/tink/http/clients/StdClient.h"/>
+   <depend name="include/tink/io/IdealSourceTools.h"/>
+   <depend name="include/tink/io/WorkerObject.h"/>
+   <depend name="include/tink/io/_Worker/Worker_Impl_.h"/>
+   <depend name="include/tink/streams/Single.h"/>
+   <depend name="include/tink/streams/StreamBase.h"/>
+   <depend name="include/tink/streams/StreamObject.h"/>
+  </file>
+  <file name="src/tink/http/clients/SecureSocketClient.cpp" >
+   <depend name="include/tink/http/ClientObject.h"/>
+   <depend name="include/tink/http/clients/SecureSocketClient.h"/>
+   <depend name="include/tink/http/clients/SocketClient.h"/>
+   <depend name="include/tink/io/WorkerObject.h"/>
+  </file>
+  <file name="src/tink/http/clients/SocketClient.cpp" >
+   <depend name="include/haxe/io/Bytes.h"/>
+   <depend name="include/haxe/io/Encoding.h"/>
+   <depend name="include/haxe/io/Input.h"/>
+   <depend name="include/haxe/io/Output.h"/>
+   <depend name="include/sys/net/Host.h"/>
+   <depend name="include/sys/net/Socket.h"/>
+   <depend name="include/sys/ssl/Socket.h"/>
+   <depend name="include/tink/_Url/Url_Impl_.h"/>
+   <depend name="include/tink/chunk/ByteChunk.h"/>
+   <depend name="include/tink/chunk/ChunkBase.h"/>
+   <depend name="include/tink/chunk/ChunkObject.h"/>
+   <depend name="include/tink/core/LinkObject.h"/>
+   <depend name="include/tink/core/MPair.h"/>
+   <depend name="include/tink/core/NamedWith.h"/>
+   <depend name="include/tink/core/Noise.h"/>
+   <depend name="include/tink/core/Outcome.h"/>
+   <depend name="include/tink/core/TypedError.h"/>
+   <depend name="include/tink/core/_Future/FutureObject.h"/>
+   <depend name="include/tink/core/_Future/Future_Impl_.h"/>
+   <depend name="include/tink/core/_Lazy/LazyConst.h"/>
+   <depend name="include/tink/core/_Lazy/LazyFunc.h"/>
+   <depend name="include/tink/core/_Lazy/LazyObject.h"/>
+   <depend name="include/tink/http/ClientObject.h"/>
+   <depend name="include/tink/http/Header.h"/>
+   <depend name="include/tink/http/HeaderField.h"/>
+   <depend name="include/tink/http/IncomingResponse.h"/>
+   <depend name="include/tink/http/Message.h"/>
+   <depend name="include/tink/http/OutgoingRequest.h"/>
+   <depend name="include/tink/http/OutgoingRequestHeader.h"/>
+   <depend name="include/tink/http/RequestHeader.h"/>
+   <depend name="include/tink/http/ResponseHeaderBase.h"/>
+   <depend name="include/tink/http/clients/SocketClient.h"/>
+   <depend name="include/tink/io/PipeResult.h"/>
+   <depend name="include/tink/io/RealSourceTools.h"/>
+   <depend name="include/tink/io/SinkObject.h"/>
+   <depend name="include/tink/io/StreamParserObject.h"/>
+   <depend name="include/tink/io/WorkerObject.h"/>
+   <depend name="include/tink/io/_Sink/SinkYielding_Impl_.h"/>
+   <depend name="include/tink/io/_Source/Source_Impl_.h"/>
+   <depend name="include/tink/io/_Worker/Worker_Impl_.h"/>
+   <depend name="include/tink/io/std/InputSource.h"/>
+   <depend name="include/tink/streams/Generator.h"/>
+   <depend name="include/tink/streams/Single.h"/>
+   <depend name="include/tink/streams/StreamBase.h"/>
+   <depend name="include/tink/streams/StreamObject.h"/>
+   <depend name="include/tink/url/_Host/Host_Impl_.h"/>
+  </file>
+  <file name="src/tink/http/clients/SecureCurlClient.cpp" >
+   <depend name="include/tink/http/ClientObject.h"/>
+   <depend name="include/tink/http/clients/CurlClient.h"/>
+   <depend name="include/tink/http/clients/SecureCurlClient.h"/>
+   <depend name="include/tink/streams/StreamObject.h"/>
+  </file>
+  <file name="src/tink/http/clients/LocalContainerClient.cpp" >
+   <depend name="include/tink/_Url/Url_Impl_.h"/>
+   <depend name="include/tink/core/NamedWith.h"/>
+   <depend name="include/tink/core/Outcome.h"/>
+   <depend name="include/tink/core/_Future/FutureObject.h"/>
+   <depend name="include/tink/core/_Future/Future_Impl_.h"/>
+   <depend name="include/tink/core/_Future/SyncFuture.h"/>
+   <depend name="include/tink/core/_Lazy/LazyConst.h"/>
+   <depend name="include/tink/core/_Lazy/LazyObject.h"/>
+   <depend name="include/tink/http/ClientObject.h"/>
+   <depend name="include/tink/http/Container.h"/>
+   <depend name="include/tink/http/Header.h"/>
+   <depend name="include/tink/http/HeaderField.h"/>
+   <depend name="include/tink/http/IncomingRequest.h"/>
+   <depend name="include/tink/http/IncomingRequestBody.h"/>
+   <depend name="include/tink/http/IncomingRequestHeader.h"/>
+   <depend name="include/tink/http/IncomingResponse.h"/>
+   <depend name="include/tink/http/Message.h"/>
+   <depend name="include/tink/http/OutgoingRequest.h"/>
+   <depend name="include/tink/http/OutgoingRequestHeader.h"/>
+   <depend name="include/tink/http/RequestHeader.h"/>
+   <depend name="include/tink/http/ResponseHeaderBase.h"/>
+   <depend name="include/tink/http/_Response/OutgoingResponseData.h"/>
+   <depend name="include/tink/http/clients/LocalContainerClient.h"/>
+   <depend name="include/tink/http/containers/LocalContainer.h"/>
+   <depend name="include/tink/streams/StreamObject.h"/>
+  </file>
+  <file name="src/tink/http/clients/CurlClient.cpp" >
+   <depend name="include/haxe/io/Bytes.h"/>
+   <depend name="include/haxe/io/Input.h"/>
+   <depend name="include/haxe/io/Output.h"/>
+   <depend name="include/sys/io/Process.h"/>
+   <depend name="include/tink/_Url/Url_Impl_.h"/>
+   <depend name="include/tink/core/MPair.h"/>
+   <depend name="include/tink/core/NamedWith.h"/>
+   <depend name="include/tink/core/Outcome.h"/>
+   <depend name="include/tink/core/_Future/FutureObject.h"/>
+   <depend name="include/tink/core/_Future/SyncFuture.h"/>
+   <depend name="include/tink/core/_Lazy/LazyConst.h"/>
+   <depend name="include/tink/core/_Lazy/LazyObject.h"/>
+   <depend name="include/tink/core/_Promise/Promise_Impl_.h"/>
+   <depend name="include/tink/http/ClientObject.h"/>
+   <depend name="include/tink/http/Header.h"/>
+   <depend name="include/tink/http/HeaderField.h"/>
+   <depend name="include/tink/http/IncomingResponse.h"/>
+   <depend name="include/tink/http/Message.h"/>
+   <depend name="include/tink/http/OutgoingRequest.h"/>
+   <depend name="include/tink/http/OutgoingRequestHeader.h"/>
+   <depend name="include/tink/http/RequestHeader.h"/>
+   <depend name="include/tink/http/ResponseHeaderBase.h"/>
+   <depend name="include/tink/http/clients/CurlClient.h"/>
+   <depend name="include/tink/io/RealSourceTools.h"/>
+   <depend name="include/tink/io/SinkObject.h"/>
+   <depend name="include/tink/io/StreamParserObject.h"/>
+   <depend name="include/tink/io/WorkerObject.h"/>
+   <depend name="include/tink/io/_Sink/SinkYielding_Impl_.h"/>
+   <depend name="include/tink/io/_Source/Source_Impl_.h"/>
+   <depend name="include/tink/io/_Worker/Worker_Impl_.h"/>
+   <depend name="include/tink/io/std/InputSource.h"/>
+   <depend name="include/tink/streams/Generator.h"/>
+   <depend name="include/tink/streams/StreamBase.h"/>
+   <depend name="include/tink/streams/StreamObject.h"/>
+  </file>
+  <file name="src/tink/http/BodyPart.cpp" >
+   <depend name="include/tink/http/BodyPart.h"/>
+  </file>
+  <file name="src/tink/http/IncomingResponse.cpp" >
+   <depend name="include/tink/http/Header.h"/>
+   <depend name="include/tink/http/IncomingResponse.h"/>
+   <depend name="include/tink/http/Message.h"/>
+   <depend name="include/tink/http/ResponseHeaderBase.h"/>
+   <depend name="include/tink/streams/StreamObject.h"/>
+  </file>
+  <file name="src/tink/http/_Response/OutgoingResponseData.cpp" >
+   <depend name="include/tink/http/Header.h"/>
+   <depend name="include/tink/http/Message.h"/>
+   <depend name="include/tink/http/ResponseHeaderBase.h"/>
+   <depend name="include/tink/http/_Response/OutgoingResponseData.h"/>
+   <depend name="include/tink/streams/StreamObject.h"/>
+  </file>
+  <file name="src/tink/http/ResponseHeaderBase.cpp" >
+   <depend name="include/Std.h"/>
+   <depend name="include/httpstatus/_HttpStatusMessage/HttpStatusMessage_Impl_.h"/>
+   <depend name="include/tink/core/NamedWith.h"/>
+   <depend name="include/tink/core/Outcome.h"/>
+   <depend name="include/tink/core/TypedError.h"/>
+   <depend name="include/tink/http/Header.h"/>
+   <depend name="include/tink/http/HeaderField.h"/>
+   <depend name="include/tink/http/HeaderParser.h"/>
+   <depend name="include/tink/http/ResponseHeaderBase.h"/>
+   <depend name="include/tink/io/BytewiseParser.h"/>
+   <depend name="include/tink/io/StreamParserObject.h"/>
+  </file>
+  <file name="src/tink/http/IncomingRequestBody.cpp" >
+   <depend name="include/tink/core/NamedWith.h"/>
+   <depend name="include/tink/http/IncomingRequestBody.h"/>
+   <depend name="include/tink/streams/StreamObject.h"/>
+  </file>
+  <file name="src/tink/http/IncomingRequest.cpp" >
+   <depend name="include/tink/http/Header.h"/>
+   <depend name="include/tink/http/IncomingRequest.h"/>
+   <depend name="include/tink/http/IncomingRequestBody.h"/>
+   <depend name="include/tink/http/IncomingRequestHeader.h"/>
+   <depend name="include/tink/http/Message.h"/>
+   <depend name="include/tink/http/RequestHeader.h"/>
+  </file>
+  <file name="src/tink/http/OutgoingRequest.cpp" >
+   <depend name="include/tink/http/Header.h"/>
+   <depend name="include/tink/http/Message.h"/>
+   <depend name="include/tink/http/OutgoingRequest.h"/>
+   <depend name="include/tink/http/OutgoingRequestHeader.h"/>
+   <depend name="include/tink/http/RequestHeader.h"/>
+   <depend name="include/tink/streams/StreamObject.h"/>
+  </file>
+  <file name="src/tink/http/OutgoingRequestHeader.cpp" >
+   <depend name="include/tink/core/NamedWith.h"/>
+   <depend name="include/tink/http/Header.h"/>
+   <depend name="include/tink/http/HeaderField.h"/>
+   <depend name="include/tink/http/OutgoingRequestHeader.h"/>
+   <depend name="include/tink/http/RequestHeader.h"/>
+  </file>
+  <file name="src/tink/http/IncomingRequestHeader.cpp" >
+   <depend name="include/tink/core/NamedWith.h"/>
+   <depend name="include/tink/http/Header.h"/>
+   <depend name="include/tink/http/HeaderField.h"/>
+   <depend name="include/tink/http/IncomingRequestHeader.h"/>
+   <depend name="include/tink/http/RequestHeader.h"/>
+  </file>
+  <file name="src/tink/http/RequestHeader.cpp" >
+   <depend name="include/tink/core/NamedWith.h"/>
+   <depend name="include/tink/http/Header.h"/>
+   <depend name="include/tink/http/HeaderField.h"/>
+   <depend name="include/tink/http/RequestHeader.h"/>
+  </file>
+  <file name="src/tink/http/Message.cpp" >
+   <depend name="include/tink/http/Message.h"/>
+  </file>
+  <file name="src/tink/http/HeaderParser.cpp" >
+   <depend name="include/Std.h"/>
+   <depend name="include/StringBuf.h"/>
+   <depend name="include/tink/core/NamedWith.h"/>
+   <depend name="include/tink/core/Outcome.h"/>
+   <depend name="include/tink/core/TypedError.h"/>
+   <depend name="include/tink/http/HeaderField.h"/>
+   <depend name="include/tink/http/HeaderParser.h"/>
+   <depend name="include/tink/io/BytewiseParser.h"/>
+   <depend name="include/tink/io/ParseStep.h"/>
+   <depend name="include/tink/io/StreamParserObject.h"/>
+  </file>
+  <file name="src/tink/io/ParseStep.cpp" >
+   <depend name="include/tink/core/TypedError.h"/>
+   <depend name="include/tink/io/ParseStep.h"/>
+  </file>
+  <file name="src/tink/io/BytewiseParser.cpp" >
+   <depend name="include/tink/chunk/ChunkCursor.h"/>
+   <depend name="include/tink/core/Outcome.h"/>
+   <depend name="include/tink/core/TypedError.h"/>
+   <depend name="include/tink/io/BytewiseParser.h"/>
+   <depend name="include/tink/io/ParseStep.h"/>
+   <depend name="include/tink/io/StreamParserObject.h"/>
+  </file>
+  <file name="src/tink/http/HeaderField.cpp" >
+   <depend name="include/StringTools.h"/>
+   <depend name="include/tink/core/NamedWith.h"/>
+   <depend name="include/tink/http/HeaderField.h"/>
+  </file>
+  <file name="src/tink/http/_Header/HeaderValue_Impl_.cpp" >
+   <depend name="include/Std.h"/>
+   <depend name="include/tink/http/_Header/HeaderValue_Impl_.h"/>
+  </file>
+  <file name="src/tink/http/Header.cpp" >
+   <depend name="include/Std.h"/>
+   <depend name="include/tink/core/NamedWith.h"/>
+   <depend name="include/tink/core/Outcome.h"/>
+   <depend name="include/tink/core/TypedError.h"/>
+   <depend name="include/tink/http/Header.h"/>
+   <depend name="include/tink/http/HeaderField.h"/>
+  </file>
+  <file name="src/tink/http/HandlerObject.cpp" >
+   <depend name="include/tink/core/_Future/FutureObject.h"/>
+   <depend name="include/tink/http/HandlerObject.h"/>
+   <depend name="include/tink/http/IncomingRequest.h"/>
+   <depend name="include/tink/http/Message.h"/>
+  </file>
+  <file name="src/tink/http/_Fetch/FetchResponse_Impl_.cpp" >
+   <depend name="include/tink/chunk/ChunkObject.h"/>
+   <depend name="include/tink/core/Outcome.h"/>
+   <depend name="include/tink/core/TypedError.h"/>
+   <depend name="include/tink/core/_Future/FutureObject.h"/>
+   <depend name="include/tink/core/_Future/SyncFuture.h"/>
+   <depend name="include/tink/core/_Lazy/LazyConst.h"/>
+   <depend name="include/tink/core/_Lazy/LazyObject.h"/>
+   <depend name="include/tink/core/_Promise/Promise_Impl_.h"/>
+   <depend name="include/tink/http/Header.h"/>
+   <depend name="include/tink/http/IncomingResponse.h"/>
+   <depend name="include/tink/http/Message.h"/>
+   <depend name="include/tink/http/ResponseHeaderBase.h"/>
+   <depend name="include/tink/http/_Fetch/FetchResponse_Impl_.h"/>
+   <depend name="include/tink/io/RealSourceTools.h"/>
+   <depend name="include/tink/streams/StreamObject.h"/>
+  </file>
+  <file name="src/tink/http/ClientType.cpp" >
+   <depend name="include/tink/http/ClientObject.h"/>
+   <depend name="include/tink/http/ClientType.h"/>
+   <depend name="include/tink/http/Container.h"/>
+   <depend name="include/tink/http/containers/LocalContainer.h"/>
+  </file>
+  <file name="src/tink/http/Fetch.cpp" >
+   <depend name="include/haxe/IMap.h"/>
+   <depend name="include/haxe/ds/BalancedTree.h"/>
+   <depend name="include/haxe/ds/EnumValueMap.h"/>
+   <depend name="include/tink/_Url/Url_Impl_.h"/>
+   <depend name="include/tink/core/LinkObject.h"/>
+   <depend name="include/tink/core/NamedWith.h"/>
+   <depend name="include/tink/core/Outcome.h"/>
+   <depend name="include/tink/core/TypedError.h"/>
+   <depend name="include/tink/core/_Future/FutureObject.h"/>
+   <depend name="include/tink/core/_Future/Future_Impl_.h"/>
+   <depend name="include/tink/core/_Future/SyncFuture.h"/>
+   <depend name="include/tink/core/_Lazy/LazyConst.h"/>
+   <depend name="include/tink/core/_Lazy/LazyObject.h"/>
+   <depend name="include/tink/core/_Promise/Promise_Impl_.h"/>
+   <depend name="include/tink/http/ClientObject.h"/>
+   <depend name="include/tink/http/ClientType.h"/>
+   <depend name="include/tink/http/Container.h"/>
+   <depend name="include/tink/http/Fetch.h"/>
+   <depend name="include/tink/http/Header.h"/>
+   <depend name="include/tink/http/HeaderField.h"/>
+   <depend name="include/tink/http/IncomingResponse.h"/>
+   <depend name="include/tink/http/Message.h"/>
+   <depend name="include/tink/http/OutgoingRequest.h"/>
+   <depend name="include/tink/http/OutgoingRequestHeader.h"/>
+   <depend name="include/tink/http/RequestHeader.h"/>
+   <depend name="include/tink/http/ResponseHeaderBase.h"/>
+   <depend name="include/tink/http/_Client/CustomClient.h"/>
+   <depend name="include/tink/http/clients/CurlClient.h"/>
+   <depend name="include/tink/http/clients/LocalContainerClient.h"/>
+   <depend name="include/tink/http/clients/SecureCurlClient.h"/>
+   <depend name="include/tink/http/clients/SecureSocketClient.h"/>
+   <depend name="include/tink/http/clients/SocketClient.h"/>
+   <depend name="include/tink/http/clients/StdClient.h"/>
+   <depend name="include/tink/http/containers/LocalContainer.h"/>
+   <depend name="include/tink/io/WorkerObject.h"/>
+   <depend name="include/tink/io/_Source/Source_Impl_.h"/>
+   <depend name="include/tink/streams/StreamObject.h"/>
+  </file>
+  <file name="src/tink/http/Container.cpp" >
+   <depend name="include/tink/http/Container.h"/>
+  </file>
+  <file name="src/tink/http/_Client/CustomClient.cpp" >
+   <depend name="include/Std.h"/>
+   <depend name="include/tink/core/Outcome.h"/>
+   <depend name="include/tink/core/_Future/FutureObject.h"/>
+   <depend name="include/tink/core/_Future/SyncFuture.h"/>
+   <depend name="include/tink/core/_Lazy/LazyConst.h"/>
+   <depend name="include/tink/core/_Lazy/LazyObject.h"/>
+   <depend name="include/tink/core/_Promise/Promise_Impl_.h"/>
+   <depend name="include/tink/http/ClientObject.h"/>
+   <depend name="include/tink/http/IncomingResponse.h"/>
+   <depend name="include/tink/http/Message.h"/>
+   <depend name="include/tink/http/OutgoingRequest.h"/>
+   <depend name="include/tink/http/_Client/CustomClient.h"/>
+  </file>
+  <file name="src/tink/http/ClientObject.cpp" >
+   <depend name="include/tink/core/_Future/FutureObject.h"/>
+   <depend name="include/tink/http/ClientObject.h"/>
+   <depend name="include/tink/http/Message.h"/>
+   <depend name="include/tink/http/OutgoingRequest.h"/>
+  </file>
+  <file name="src/tink/io/StreamParserObject.cpp" >
+   <depend name="include/tink/chunk/ChunkCursor.h"/>
+   <depend name="include/tink/core/Outcome.h"/>
+   <depend name="include/tink/io/ParseStep.h"/>
+   <depend name="include/tink/io/StreamParserObject.h"/>
+  </file>
+  <file name="src/tink/core/_Promise/Promise_Impl_.cpp" >
+   <depend name="include/tink/core/Outcome.h"/>
+   <depend name="include/tink/core/TypedError.h"/>
+   <depend name="include/tink/core/_Future/FutureObject.h"/>
+   <depend name="include/tink/core/_Future/SyncFuture.h"/>
+   <depend name="include/tink/core/_Lazy/LazyConst.h"/>
+   <depend name="include/tink/core/_Lazy/LazyObject.h"/>
+   <depend name="include/tink/core/_Promise/Promise_Impl_.h"/>
+  </file>
+  <file name="src/tink/core/MPair.cpp" >
+   <depend name="include/tink/core/MPair.h"/>
+  </file>
+  <file name="src/tink/core/Outcome.cpp" >
+   <depend name="include/tink/core/Outcome.h"/>
+  </file>
+  <file name="src/tink/core/NamedWith.cpp" >
+   <depend name="include/tink/core/NamedWith.h"/>
+  </file>
+  <file name="src/tink/core/_Lazy/LazyFunc.cpp" >
+   <depend name="include/tink/core/_Lazy/LazyFunc.h"/>
+   <depend name="include/tink/core/_Lazy/LazyObject.h"/>
+  </file>
+  <file name="src/tink/core/_Future/LazyTrigger.cpp" >
+   <depend name="include/tink/core/FutureTrigger.h"/>
+   <depend name="include/tink/core/LinkObject.h"/>
+   <depend name="include/tink/core/_Callback/Callback_Impl_.h"/>
+   <depend name="include/tink/core/_Future/FutureObject.h"/>
+   <depend name="include/tink/core/_Future/Future_Impl_.h"/>
+   <depend name="include/tink/core/_Future/LazyTrigger.h"/>
+  </file>
+  <file name="src/tink/core/FutureTrigger.cpp" >
+   <depend name="include/tink/core/FutureTrigger.h"/>
+   <depend name="include/tink/core/LinkObject.h"/>
+   <depend name="include/tink/core/_Callback/CallbackList_Impl_.h"/>
+   <depend name="include/tink/core/_Callback/Callback_Impl_.h"/>
+   <depend name="include/tink/core/_Callback/ListCell.h"/>
+   <depend name="include/tink/core/_Future/FutureObject.h"/>
+   <depend name="include/tink/core/_Future/SimpleFuture.h"/>
+   <depend name="include/tink/core/_Future/SyncFuture.h"/>
+   <depend name="include/tink/core/_Lazy/LazyConst.h"/>
+   <depend name="include/tink/core/_Lazy/LazyObject.h"/>
+  </file>
+  <file name="src/tink/core/_Future/NestedFuture.cpp" >
+   <depend name="include/tink/core/FutureTrigger.h"/>
+   <depend name="include/tink/core/LinkObject.h"/>
+   <depend name="include/tink/core/_Callback/Callback_Impl_.h"/>
+   <depend name="include/tink/core/_Future/FutureObject.h"/>
+   <depend name="include/tink/core/_Future/NestedFuture.h"/>
+  </file>
+  <file name="src/tink/core/_Future/SimpleFuture.cpp" >
+   <depend name="include/tink/core/FutureTrigger.h"/>
+   <depend name="include/tink/core/LinkObject.h"/>
+   <depend name="include/tink/core/_Callback/Callback_Impl_.h"/>
+   <depend name="include/tink/core/_Future/FutureObject.h"/>
+   <depend name="include/tink/core/_Future/Future_Impl_.h"/>
+   <depend name="include/tink/core/_Future/SimpleFuture.h"/>
+  </file>
+  <file name="src/tink/core/_Future/Future_Impl_.cpp" >
+   <depend name="include/tink/core/FutureTrigger.h"/>
+   <depend name="include/tink/core/_Callback/Callback_Impl_.h"/>
+   <depend name="include/tink/core/_Future/FutureObject.h"/>
+   <depend name="include/tink/core/_Future/Future_Impl_.h"/>
+   <depend name="include/tink/core/_Future/LazyTrigger.h"/>
+   <depend name="include/tink/core/_Future/NestedFuture.h"/>
+  </file>
+  <file name="src/tink/core/_Future/SyncFuture.cpp" >
+   <depend name="include/tink/core/LinkObject.h"/>
+   <depend name="include/tink/core/_Callback/Callback_Impl_.h"/>
+   <depend name="include/tink/core/_Future/FutureObject.h"/>
+   <depend name="include/tink/core/_Future/SimpleFuture.h"/>
+   <depend name="include/tink/core/_Future/SyncFuture.h"/>
+   <depend name="include/tink/core/_Lazy/LazyObject.h"/>
+  </file>
+  <file name="src/tink/core/_Lazy/LazyConst.cpp" >
+   <depend name="include/tink/core/_Lazy/LazyConst.h"/>
+   <depend name="include/tink/core/_Lazy/LazyFunc.h"/>
+   <depend name="include/tink/core/_Lazy/LazyObject.h"/>
+  </file>
+  <file name="src/tink/core/_Lazy/LazyObject.cpp" >
+   <depend name="include/tink/core/_Lazy/LazyObject.h"/>
+  </file>
+  <file name="src/tink/core/Noise.cpp" >
+   <depend name="include/tink/core/Noise.h"/>
+  </file>
+  <file name="src/tink/core/_Future/FutureObject.cpp" >
+   <depend name="include/tink/core/LinkObject.h"/>
+   <depend name="include/tink/core/_Future/FutureObject.h"/>
+  </file>
+  <file name="src/tink/core/TypedError.cpp" >
+   <depend name="include/haxe/StackItem.h"/>
+   <depend name="include/tink/core/TypedError.h"/>
+  </file>
+  <file name="src/tink/core/_Callback/CallbackList_Impl_.cpp" >
+   <depend name="include/tink/core/LinkObject.h"/>
+   <depend name="include/tink/core/_Callback/CallbackList_Impl_.h"/>
+   <depend name="include/tink/core/_Callback/Callback_Impl_.h"/>
+   <depend name="include/tink/core/_Callback/ListCell.h"/>
+  </file>
+  <file name="src/tink/core/_Callback/ListCell.cpp" >
+   <depend name="include/tink/core/LinkObject.h"/>
+   <depend name="include/tink/core/_Callback/ListCell.h"/>
+  </file>
+  <file name="src/tink/core/LinkObject.cpp" >
+   <depend name="include/tink/core/LinkObject.h"/>
+  </file>
+  <file name="src/tink/core/_Callback/Callback_Impl_.cpp" >
+   <depend name="include/haxe/Timer.h"/>
+   <depend name="include/tink/core/_Callback/Callback_Impl_.h"/>
+  </file>
+  <file name="src/tink/chunk/ChunkCursor.cpp" >
+   <depend name="include/tink/_Chunk/Chunk_Impl_.h"/>
+   <depend name="include/tink/chunk/ByteChunk.h"/>
+   <depend name="include/tink/chunk/ChunkBase.h"/>
+   <depend name="include/tink/chunk/ChunkCursor.h"/>
+   <depend name="include/tink/chunk/ChunkObject.h"/>
+  </file>
+  <file name="src/tink/chunk/ByteChunk.cpp" >
+   <depend name="include/haxe/io/Bytes.h"/>
+   <depend name="include/haxe/io/Encoding.h"/>
+   <depend name="include/tink/_Chunk/Chunk_Impl_.h"/>
+   <depend name="include/tink/chunk/ByteChunk.h"/>
+   <depend name="include/tink/chunk/ChunkBase.h"/>
+   <depend name="include/tink/chunk/ChunkObject.h"/>
+  </file>
+  <file name="src/tink/_Url/Url_Impl_.cpp" >
+   <depend name="include/EReg.h"/>
+   <depend name="include/Reflect.h"/>
+   <depend name="include/Std.h"/>
+   <depend name="include/StringTools.h"/>
+   <depend name="include/tink/_Url/Url_Impl_.h"/>
+   <depend name="include/tink/url/_Host/Host_Impl_.h"/>
+   <depend name="include/tink/url/_Path/Path_Impl_.h"/>
+  </file>
+  <file name="src/tink/_Chunk/Chunk_Impl_.cpp" >
+   <depend name="include/tink/_Chunk/Chunk_Impl_.h"/>
+   <depend name="include/tink/_Chunk/CompoundChunk.h"/>
+   <depend name="include/tink/_Chunk/EmptyChunk.h"/>
+   <depend name="include/tink/chunk/ChunkBase.h"/>
+   <depend name="include/tink/chunk/ChunkObject.h"/>
+  </file>
+  <file name="src/tink/_Chunk/CompoundChunk.cpp" >
+   <depend name="include/haxe/io/Bytes.h"/>
+   <depend name="include/tink/_Chunk/Chunk_Impl_.h"/>
+   <depend name="include/tink/_Chunk/CompoundChunk.h"/>
+   <depend name="include/tink/chunk/ByteChunk.h"/>
+   <depend name="include/tink/chunk/ChunkBase.h"/>
+   <depend name="include/tink/chunk/ChunkObject.h"/>
+  </file>
+  <file name="src/tink/_Chunk/EmptyChunk.cpp" >
+   <depend name="include/haxe/io/Bytes.h"/>
+   <depend name="include/tink/_Chunk/EmptyChunk.h"/>
+   <depend name="include/tink/chunk/ChunkBase.h"/>
+   <depend name="include/tink/chunk/ChunkObject.h"/>
+  </file>
+  <file name="src/tink/chunk/ChunkObject.cpp" >
+   <depend name="include/haxe/io/Bytes.h"/>
+   <depend name="include/tink/chunk/ByteChunk.h"/>
+   <depend name="include/tink/chunk/ChunkBase.h"/>
+   <depend name="include/tink/chunk/ChunkCursor.h"/>
+   <depend name="include/tink/chunk/ChunkObject.h"/>
+  </file>
+  <file name="src/tink/chunk/ChunkBase.cpp" >
+   <depend name="include/tink/chunk/ByteChunk.h"/>
+   <depend name="include/tink/chunk/ChunkBase.h"/>
+   <depend name="include/tink/chunk/ChunkCursor.h"/>
+   <depend name="include/tink/chunk/ChunkObject.h"/>
+  </file>
+  <file name="src/sys/ssl/Socket.cpp" >
+   <depend name="include/cpp/Lib.h"/>
+   <depend name="include/haxe/io/Error.h"/>
+   <depend name="include/haxe/io/Input.h"/>
+   <depend name="include/haxe/io/Output.h"/>
+   <depend name="include/sys/net/Host.h"/>
+   <depend name="include/sys/net/Socket.h"/>
+   <depend name="include/sys/ssl/Certificate.h"/>
+   <depend name="include/sys/ssl/Key.h"/>
+   <depend name="include/sys/ssl/Socket.h"/>
+   <depend name="include/sys/ssl/_Socket/SocketInput.h"/>
+   <depend name="include/sys/ssl/_Socket/SocketOutput.h"/>
+  </file>
+  <file name="src/sys/ssl/_Socket/SocketOutput.cpp" >
+   <depend name="include/haxe/io/Bytes.h"/>
+   <depend name="include/haxe/io/Error.h"/>
+   <depend name="include/haxe/io/Output.h"/>
+   <depend name="include/sys/net/Socket.h"/>
+   <depend name="include/sys/ssl/Socket.h"/>
+   <depend name="include/sys/ssl/_Socket/SocketOutput.h"/>
+  </file>
+  <file name="src/sys/ssl/_Socket/SocketInput.cpp" >
+   <depend name="include/haxe/io/Bytes.h"/>
+   <depend name="include/haxe/io/Eof.h"/>
+   <depend name="include/haxe/io/Error.h"/>
+   <depend name="include/haxe/io/Input.h"/>
+   <depend name="include/sys/net/Socket.h"/>
+   <depend name="include/sys/ssl/Socket.h"/>
+   <depend name="include/sys/ssl/_Socket/SocketInput.h"/>
+  </file>
+  <file name="src/sys/ssl/Key.cpp" >
+   <depend name="include/sys/ssl/Key.h"/>
+  </file>
+  <file name="src/sys/ssl/Certificate.cpp" >
+   <depend name="include/Sys.h"/>
+   <depend name="include/sys/FileSystem.h"/>
+   <depend name="include/sys/ssl/Certificate.h"/>
+  </file>
+  <file name="src/sys/net/Socket.cpp" >
+   <depend name="include/Reflect.h"/>
+   <depend name="include/cpp/Lib.h"/>
+   <depend name="include/haxe/io/Input.h"/>
+   <depend name="include/haxe/io/Output.h"/>
+   <depend name="include/sys/net/Host.h"/>
+   <depend name="include/sys/net/Socket.h"/>
+   <depend name="include/sys/net/_Socket/SocketInput.h"/>
+   <depend name="include/sys/net/_Socket/SocketOutput.h"/>
+  </file>
+  <file name="src/sys/net/_Socket/SocketOutput.cpp" >
+   <depend name="include/haxe/io/Bytes.h"/>
+   <depend name="include/haxe/io/Eof.h"/>
+   <depend name="include/haxe/io/Error.h"/>
+   <depend name="include/haxe/io/Output.h"/>
+   <depend name="include/sys/net/_Socket/SocketOutput.h"/>
+  </file>
+  <file name="src/sys/net/_Socket/SocketInput.cpp" >
+   <depend name="include/haxe/io/Bytes.h"/>
+   <depend name="include/haxe/io/Eof.h"/>
+   <depend name="include/haxe/io/Error.h"/>
+   <depend name="include/haxe/io/Input.h"/>
+   <depend name="include/sys/net/_Socket/SocketInput.h"/>
+  </file>
+  <file name="src/sys/net/Host.cpp" >
+   <depend name="include/sys/net/Host.h"/>
+  </file>
+  <file name="src/sys/io/Process.cpp" >
+   <depend name="include/haxe/io/Input.h"/>
+   <depend name="include/haxe/io/Output.h"/>
+   <depend name="include/sys/io/Process.h"/>
+   <depend name="include/sys/io/_Process/Stdin.h"/>
+   <depend name="include/sys/io/_Process/Stdout.h"/>
+  </file>
+  <file name="src/sys/io/_Process/Stdout.cpp" >
+   <depend name="include/haxe/io/Bytes.h"/>
+   <depend name="include/haxe/io/Eof.h"/>
+   <depend name="include/haxe/io/Error.h"/>
+   <depend name="include/haxe/io/Input.h"/>
+   <depend name="include/sys/io/_Process/Stdout.h"/>
+  </file>
+  <file name="src/sys/io/_Process/Stdin.cpp" >
+   <depend name="include/haxe/io/Bytes.h"/>
+   <depend name="include/haxe/io/Eof.h"/>
+   <depend name="include/haxe/io/Output.h"/>
+   <depend name="include/sys/io/_Process/Stdin.h"/>
+  </file>
+  <file name="src/sys/Http.cpp" >
+   <depend name="include/EReg.h"/>
+   <depend name="include/Lambda.h"/>
+   <depend name="include/Std.h"/>
+   <depend name="include/StringBuf.h"/>
+   <depend name="include/StringTools.h"/>
+   <depend name="include/haxe/IMap.h"/>
+   <depend name="include/haxe/ds/StringMap.h"/>
+   <depend name="include/haxe/http/HttpBase.h"/>
+   <depend name="include/haxe/io/Bytes.h"/>
+   <depend name="include/haxe/io/BytesBuffer.h"/>
+   <depend name="include/haxe/io/BytesOutput.h"/>
+   <depend name="include/haxe/io/Encoding.h"/>
+   <depend name="include/haxe/io/Eof.h"/>
+   <depend name="include/haxe/io/Error.h"/>
+   <depend name="include/haxe/io/Input.h"/>
+   <depend name="include/haxe/io/Output.h"/>
+   <depend name="include/sys/Http.h"/>
+   <depend name="include/sys/net/Host.h"/>
+   <depend name="include/sys/net/Socket.h"/>
+   <depend name="include/sys/ssl/Socket.h"/>
+  </file>
+  <file name="src/sys/FileSystem.cpp" >
+   <depend name="include/haxe/io/Path.h"/>
+   <depend name="include/sys/FileSystem.h"/>
+  </file>
+  <file name="src/httpstatus/_HttpStatusMessage/HttpStatusMessage_Impl_.cpp" >
+   <depend name="include/httpstatus/_HttpStatusMessage/HttpStatusMessage_Impl_.h"/>
+  </file>
+  <file name="src/haxe/io/Path.cpp" >
+   <depend name="include/haxe/io/Path.h"/>
+  </file>
+  <file name="src/haxe/io/Input.cpp" >
+   <depend name="include/haxe/io/Bytes.h"/>
+   <depend name="include/haxe/io/Eof.h"/>
+   <depend name="include/haxe/io/Error.h"/>
+   <depend name="include/haxe/io/Input.h"/>
+  </file>
+  <file name="src/haxe/io/Error.cpp" >
+   <depend name="include/haxe/io/Error.h"/>
+  </file>
+  <file name="src/haxe/io/Eof.cpp" >
+   <depend name="include/haxe/io/Eof.h"/>
+  </file>
+  <file name="src/haxe/io/Encoding.cpp" >
+   <depend name="include/haxe/io/Encoding.h"/>
+  </file>
+  <file name="src/haxe/io/BytesOutput.cpp" >
+   <depend name="include/haxe/io/Bytes.h"/>
+   <depend name="include/haxe/io/BytesBuffer.h"/>
+   <depend name="include/haxe/io/BytesOutput.h"/>
+   <depend name="include/haxe/io/Error.h"/>
+   <depend name="include/haxe/io/Output.h"/>
+  </file>
+  <file name="src/haxe/io/Output.cpp" >
+   <depend name="include/haxe/io/Bytes.h"/>
+   <depend name="include/haxe/io/Encoding.h"/>
+   <depend name="include/haxe/io/Error.h"/>
+   <depend name="include/haxe/io/Output.h"/>
+  </file>
+  <file name="src/haxe/io/BytesBuffer.cpp" >
+   <depend name="include/haxe/io/Bytes.h"/>
+   <depend name="include/haxe/io/BytesBuffer.h"/>
+  </file>
+  <file name="src/haxe/http/HttpBase.cpp" >
+   <depend name="include/Reflect.h"/>
+   <depend name="include/haxe/http/HttpBase.h"/>
+   <depend name="include/haxe/io/Bytes.h"/>
+   <depend name="include/haxe/io/Encoding.h"/>
+  </file>
+  <file name="src/haxe/format/JsonPrinter.cpp" >
+   <depend name="include/Date.h"/>
+   <depend name="include/Reflect.h"/>
+   <depend name="include/Std.h"/>
+   <depend name="include/StringBuf.h"/>
+   <depend name="include/StringTools.h"/>
+   <depend name="include/Type.h"/>
+   <depend name="include/ValueType.h"/>
+   <depend name="include/haxe/IMap.h"/>
+   <depend name="include/haxe/ds/StringMap.h"/>
+   <depend name="include/haxe/format/JsonPrinter.h"/>
+  </file>
+  <file name="src/haxe/format/JsonParser.cpp" >
+   <depend name="include/Reflect.h"/>
+   <depend name="include/Std.h"/>
+   <depend name="include/StringBuf.h"/>
+   <depend name="include/haxe/format/JsonParser.h"/>
+  </file>
+  <file name="src/haxe/ds/StringMap.cpp" >
+   <depend name="include/haxe/IMap.h"/>
+   <depend name="include/haxe/ds/StringMap.h"/>
+  </file>
+  <file name="src/haxe/ds/Option.cpp" >
+   <depend name="include/haxe/ds/Option.h"/>
+  </file>
+  <file name="src/haxe/ds/EnumValueMap.cpp" >
+   <depend name="include/Reflect.h"/>
+   <depend name="include/Std.h"/>
+   <depend name="include/Type.h"/>
+   <depend name="include/haxe/IMap.h"/>
+   <depend name="include/haxe/ds/BalancedTree.h"/>
+   <depend name="include/haxe/ds/EnumValueMap.h"/>
+  </file>
+  <file name="src/haxe/ds/TreeNode.cpp" >
+   <depend name="include/haxe/ds/TreeNode.h"/>
+  </file>
+  <file name="src/haxe/ds/BalancedTree.cpp" >
+   <depend name="include/Reflect.h"/>
+   <depend name="include/haxe/IMap.h"/>
+   <depend name="include/haxe/ds/BalancedTree.h"/>
+   <depend name="include/haxe/ds/TreeNode.h"/>
+  </file>
+  <file name="src/haxe/io/Bytes.cpp" >
+   <depend name="include/haxe/io/Bytes.h"/>
+   <depend name="include/haxe/io/Encoding.h"/>
+   <depend name="include/haxe/io/Error.h"/>
+  </file>
+  <file name="src/haxe/Timer.cpp" >
+   <depend name="include/haxe/MainEvent.h"/>
+   <depend name="include/haxe/MainLoop.h"/>
+   <depend name="include/haxe/Timer.h"/>
+  </file>
+  <file name="src/haxe/MainLoop.cpp" >
+   <depend name="include/haxe/MainEvent.h"/>
+   <depend name="include/haxe/MainLoop.h"/>
+  </file>
+  <file name="src/haxe/MainEvent.cpp" >
+   <depend name="include/haxe/MainEvent.h"/>
+   <depend name="include/haxe/MainLoop.h"/>
+  </file>
+  <file name="src/haxe/EntryPoint.cpp" >
+   <depend name="include/haxe/EntryPoint.h"/>
+   <depend name="include/haxe/MainLoop.h"/>
+   <depend name="include/sys/thread/Lock.h"/>
+   <depend name="include/sys/thread/Mutex.h"/>
+  </file>
+  <file name="src/sys/thread/Lock.cpp" >
+   <depend name="include/sys/thread/Lock.h"/>
+  </file>
+  <file name="src/sys/thread/Mutex.cpp" >
+   <depend name="include/sys/thread/Mutex.h"/>
+  </file>
+  <file name="src/haxe/IMap.cpp" >
+   <depend name="include/haxe/IMap.h"/>
+  </file>
+  <file name="src/haxe/StackItem.cpp" >
+   <depend name="include/haxe/StackItem.h"/>
+  </file>
+  <file name="src/cpp/Lib.cpp" >
+   <depend name="include/cpp/Lib.h"/>
+  </file>
+  <file name="src/civo/net/CivoHttp.cpp" >
+   <depend name="include/civo/net/CivoHttp.h"/>
+   <depend name="include/haxe/format/JsonParser.h"/>
+   <depend name="include/haxe/format/JsonPrinter.h"/>
+   <depend name="include/haxe/io/Bytes.h"/>
+   <depend name="include/haxe/io/Encoding.h"/>
+   <depend name="include/tink/_Url/Url_Impl_.h"/>
+   <depend name="include/tink/chunk/ByteChunk.h"/>
+   <depend name="include/tink/chunk/ChunkBase.h"/>
+   <depend name="include/tink/chunk/ChunkObject.h"/>
+   <depend name="include/tink/core/LinkObject.h"/>
+   <depend name="include/tink/core/NamedWith.h"/>
+   <depend name="include/tink/core/Outcome.h"/>
+   <depend name="include/tink/core/TypedError.h"/>
+   <depend name="include/tink/core/_Future/FutureObject.h"/>
+   <depend name="include/tink/core/_Lazy/LazyConst.h"/>
+   <depend name="include/tink/core/_Lazy/LazyObject.h"/>
+   <depend name="include/tink/http/Fetch.h"/>
+   <depend name="include/tink/http/Header.h"/>
+   <depend name="include/tink/http/HeaderField.h"/>
+   <depend name="include/tink/http/Message.h"/>
+   <depend name="include/tink/http/ResponseHeaderBase.h"/>
+   <depend name="include/tink/http/_Fetch/FetchResponse_Impl_.h"/>
+   <depend name="include/tink/http/_Header/HeaderValue_Impl_.h"/>
+   <depend name="include/tink/streams/Single.h"/>
+   <depend name="include/tink/streams/StreamBase.h"/>
+   <depend name="include/tink/streams/StreamObject.h"/>
+  </file>
+  <file name="src/civo/Webhooks.cpp" >
+   <depend name="include/civo/Webhooks.h"/>
+   <depend name="include/civo/net/CivoHttp.h"/>
+   <depend name="include/tink/core/LinkObject.h"/>
+  </file>
+  <file name="src/civo/Volumes.cpp" >
+   <depend name="include/civo/Volumes.h"/>
+   <depend name="include/civo/net/CivoHttp.h"/>
+   <depend name="include/tink/core/LinkObject.h"/>
+  </file>
+  <file name="src/civo/Templates.cpp" >
+   <depend name="include/civo/Templates.h"/>
+   <depend name="include/civo/net/CivoHttp.h"/>
+   <depend name="include/tink/core/LinkObject.h"/>
+  </file>
+  <file name="src/civo/Ssh.cpp" >
+   <depend name="include/civo/Ssh.h"/>
+   <depend name="include/civo/net/CivoHttp.h"/>
+   <depend name="include/tink/core/LinkObject.h"/>
+  </file>
+  <file name="src/civo/Snapshots.cpp" >
+   <depend name="include/civo/Snapshots.h"/>
+   <depend name="include/civo/net/CivoHttp.h"/>
+   <depend name="include/tink/core/LinkObject.h"/>
+  </file>
+  <file name="src/civo/Regions.cpp" >
+   <depend name="include/civo/Regions.h"/>
+   <depend name="include/civo/net/CivoHttp.h"/>
+   <depend name="include/tink/core/LinkObject.h"/>
+  </file>
+  <file name="src/civo/Quota.cpp" >
+   <depend name="include/civo/Quota.h"/>
+   <depend name="include/civo/net/CivoHttp.h"/>
+   <depend name="include/tink/core/LinkObject.h"/>
+  </file>
+  <file name="src/civo/Networks.cpp" >
+   <depend name="include/civo/Networks.h"/>
+   <depend name="include/civo/net/CivoHttp.h"/>
+   <depend name="include/tink/core/LinkObject.h"/>
+  </file>
+  <file name="src/civo/LoadBalancers.cpp" >
+   <depend name="include/civo/LoadBalancers.h"/>
+   <depend name="include/civo/net/CivoHttp.h"/>
+   <depend name="include/tink/core/LinkObject.h"/>
+  </file>
+  <file name="src/civo/Kubernetes.cpp" >
+   <depend name="include/civo/Kubernetes.h"/>
+   <depend name="include/civo/net/CivoHttp.h"/>
+   <depend name="include/tink/core/LinkObject.h"/>
+  </file>
+  <file name="src/civo/Instances.cpp" >
+   <depend name="include/civo/Instances.h"/>
+   <depend name="include/civo/net/CivoHttp.h"/>
+   <depend name="include/tink/core/LinkObject.h"/>
+  </file>
+  <file name="src/civo/Firewalls.cpp" >
+   <depend name="include/civo/Firewalls.h"/>
+   <depend name="include/civo/net/CivoHttp.h"/>
+   <depend name="include/tink/core/LinkObject.h"/>
+  </file>
+  <file name="src/civo/Dns.cpp" >
+   <depend name="include/civo/Dns.h"/>
+   <depend name="include/civo/net/CivoHttp.h"/>
+   <depend name="include/tink/core/LinkObject.h"/>
+  </file>
+  <file name="src/civo/Charges.cpp" >
+   <depend name="include/civo/Charges.h"/>
+   <depend name="include/civo/net/CivoHttp.h"/>
+   <depend name="include/tink/core/LinkObject.h"/>
+  </file>
+  <file name="src/Type.cpp" >
+   <depend name="include/Reflect.h"/>
+   <depend name="include/Type.h"/>
+   <depend name="include/ValueType.h"/>
+  </file>
+  <file name="src/ValueType.cpp" >
+   <depend name="include/ValueType.h"/>
+  </file>
+  <file name="src/Sys.cpp" >
+   <depend name="include/Sys.h"/>
+  </file>
+  <file name="src/StringTools.cpp" >
+   <depend name="include/Std.h"/>
+   <depend name="include/StringBuf.h"/>
+   <depend name="include/StringTools.h"/>
+  </file>
+  <file name="src/StringBuf.cpp" >
+   <depend name="include/StringBuf.h"/>
+  </file>
+  <file name="src/Std.cpp" >
+   <depend name="include/Std.h"/>
+  </file>
+  <file name="src/Reflect.cpp" >
+   <depend name="include/Reflect.h"/>
+  </file>
+  <file name="src/Lambda.cpp" >
+   <depend name="include/Lambda.h"/>
+  </file>
+  <file name="src/EReg.cpp" >
+   <depend name="include/EReg.h"/>
+  </file>
+  <file name="src/Date.cpp" >
+   <depend name="include/Date.h"/>
+  </file>
+  <file name="src/Civo.cpp" >
+   <depend name="include/Civo.h"/>
+  </file>
+  <file name="src/__boot__.cpp" >
+   <depend name="include/tink/streams/Step.h"/>
+   <depend name="include/tink/streams/Reduction.h"/>
+   <depend name="include/tink/streams/ReductionStep.h"/>
+   <depend name="include/tink/streams/Conclusion.h"/>
+   <depend name="include/tink/streams/Handled.h"/>
+   <depend name="include/tink/streams/RegroupResult.h"/>
+   <depend name="include/tink/streams/RegroupStatus.h"/>
+   <depend name="include/tink/io/ParseResult.h"/>
+   <depend name="include/tink/io/PipeResult.h"/>
+   <depend name="include/tink/http/BodyPart.h"/>
+   <depend name="include/tink/http/IncomingRequestBody.h"/>
+   <depend name="include/tink/io/ParseStep.h"/>
+   <depend name="include/tink/http/ClientType.h"/>
+   <depend name="include/tink/core/Outcome.h"/>
+   <depend name="include/tink/core/Noise.h"/>
+   <depend name="include/haxe/io/Error.h"/>
+   <depend name="include/haxe/io/Encoding.h"/>
+   <depend name="include/haxe/ds/Option.h"/>
+   <depend name="include/haxe/StackItem.h"/>
+   <depend name="include/ValueType.h"/>
+   <depend name="include/tink/io/_Worker/Worker_Impl_.h"/>
+   <depend name="include/tink/io/_Source/Source_Impl_.h"/>
+   <depend name="include/tink/streams/Empty.h"/>
+   <depend name="include/tink/http/Fetch.h"/>
+   <depend name="include/tink/core/_Callback/Callback_Impl_.h"/>
+   <depend name="include/tink/_Chunk/Chunk_Impl_.h"/>
+   <depend name="include/tink/_Chunk/EmptyChunk.h"/>
+   <depend name="include/sys/ssl/Socket.h"/>
+   <depend name="include/sys/ssl/Key.h"/>
+   <depend name="include/sys/ssl/Certificate.h"/>
+   <depend name="include/sys/net/Host.h"/>
+   <depend name="include/sys/Http.h"/>
+   <depend name="include/haxe/EntryPoint.h"/>
+   <depend name="include/civo/Webhooks.h"/>
+   <depend name="include/civo/Volumes.h"/>
+   <depend name="include/civo/Templates.h"/>
+   <depend name="include/civo/Ssh.h"/>
+   <depend name="include/civo/Snapshots.h"/>
+   <depend name="include/civo/Regions.h"/>
+   <depend name="include/civo/Quota.h"/>
+   <depend name="include/civo/Networks.h"/>
+   <depend name="include/civo/LoadBalancers.h"/>
+   <depend name="include/civo/Kubernetes.h"/>
+   <depend name="include/civo/Instances.h"/>
+   <depend name="include/civo/Firewalls.h"/>
+   <depend name="include/civo/Dns.h"/>
+   <depend name="include/civo/Charges.h"/>
+  </file>
+  <file name="src/__files__.cpp" if='HXCPP_DEBUGGER'>
+  </file>
+   <file name="${HXCPP}/src/hx/NoFiles.cpp" unless="HXCPP_DEBUGGER" />
+  <file name="src/__resources__.cpp" >
+  </file>
+</files>
+<files id="__lib__">
+<compilerflag value="-Iinclude"/>
+  <file name="src/__lib__.cpp" >
+   <depend name="include/Civo.h"/>
+   <depend name="include/haxe/EntryPoint.h"/>
+  </file>
+</files>
+<files id="__main__">
+<compilerflag value="-Iinclude"/>
+  <file name="src/__main__.cpp" >
+   <depend name="include/Civo.h"/>
+   <depend name="include/haxe/EntryPoint.h"/>
+  </file>
+</files>
+<files id="__resources__">
+</files>
+<files id="__externs__">
+</files>
+<set name="HAXE_OUTPUT" value="Civo" />
+<include name="${HXCPP}/build-tool/BuildCommon.xml"/>
+<include name="${HXCPP}/src/hx/libs/regexp/Build.xml"/>
+<include name="${HXCPP}/src/hx/libs/std/Build.xml"/>
+<include name="${HXCPP}/src/hx/libs/std/Build.xml"/>
+<include name="${HXCPP}/src/hx/libs/std/Build.xml"/>
+<include name="${HXCPP}/src/hx/libs/ssl/Build.xml"/>
+<include name="${HXCPP}/src/hx/libs/std/Build.xml"/>
+<include name="${HXCPP}/src/hx/libs/std/Build.xml"/>
+<error value="Hxcpp is out of date - please update" unlessApi="400" />
+</xml>
