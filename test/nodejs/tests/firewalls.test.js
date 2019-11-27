@@ -60,7 +60,6 @@ describe('Firewalls.list', () => {
 describe('Firewalls.delete', () => {
   test('it should delete a firewall', done => {
     lib.civo.Firewalls.delete(token(), fw_id, function(status, data) {
-      console.log("deleted");
       expect(status).toBe(200);
       expect(data.result).toBe('success');
       done();
