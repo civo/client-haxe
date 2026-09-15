@@ -4,15 +4,17 @@ import Civo;
 import civo.net.CivoHttp;
 
 @:expose
-class Kubernetes {
-  static inline var PATH = "/kubernetes/clusters";
+class SnapshotSchedules {
+  static inline var PATH = "/resourcesnapshotschedules";
   var client:Civo;
 
   public function new(client:Civo) {
     this.client = client;
   }
 
-  public function create(params:Dynamic, handler:Int->Dynamic->Void):Void {
+  public function create(params:Dynamic, handler:Int->Dynamic->Void, ?region:String):Void {
+    if (region != null)
+      Reflect.setField(params, "region", region);
     CivoHttp.post(client, PATH, handler, params);
   }
 
@@ -30,22 +32,7 @@ class Kubernetes {
     CivoHttp.put(client, '$PATH/$id', handler, params);
   }
 
-  public function applications(handler:Int->Dynamic->Void):Void {
-    CivoHttp.get(client, "/kubernetes/applications", handler);
-  }
-
-  public function versions(handler:Int->Dynamic->Void):Void {
-    CivoHttp.get(client, "/kubernetes/versions", handler);
-  }
-
   public function delete(id:String, handler:Int->Dynamic->Void, ?region:String):Void {
     CivoHttp.delete(client, '$PATH/$id', handler, region != null ? {region: region} : {});
-  }
-
-  public function recycle(id:String, hostname:String, handler:Int->Dynamic->Void, ?region:String):Void {
-    var params:Dynamic = {hostname: hostname};
-    if (region != null)
-      Reflect.setField(params, "region", region);
-    CivoHttp.post(client, '$PATH/$id/recycle', handler, params);
   }
 }

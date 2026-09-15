@@ -1,62 +1,46 @@
 package civo;
 
+import Civo;
 import civo.net.CivoHttp;
-
-/*
-  Civo host reverse DNS for all instances automatically. If you'd 
-  like to manage forward (normal) DNS for your domains, you can do 
-  that for free within your account.
-
-  This API is effectively split in to two parts: 1) Managing domain 
-  names themselves, and 2) Managing records within those domain names.
-
-  Civo don't offer registration of domain names, this is purely for 
-  hosting the DNS. If you're looking to buy a domain name, Civo 
-  recommends [LCN.com](http://lcn.com) for their excellent friendly support and very 
-  competitive prices.
-*/
 
 @:expose
 class Dns {
-  static var path = '/dns';
+  static inline var PATH = "/dns";
+  var client:Civo;
 
-  static public function list_domains(token: String, handler: Int -> Dynamic -> Void) {
-    CivoHttp.get(token, path, handler);
+  public function new(client:Civo) {
+    this.client = client;
   }
 
-  static public function create_domain(token: String, name: String, handler: Int -> Dynamic -> Void) {
-    CivoHttp.post(token, path, handler, {name: name});
+  public function listDomains(handler:Int->Dynamic->Void):Void {
+    CivoHttp.get(client, PATH, handler);
   }
 
-  static public function update_domain(token: String, domain_id: String, domain_name: String, handler: Int -> Dynamic -> Void) {
-    CivoHttp.put(token, '$path/$domain_id', handler, {name: domain_name});
+  public function createDomain(name:String, handler:Int->Dynamic->Void):Void {
+    CivoHttp.post(client, PATH, handler, {name: name});
   }
 
-  static public function delete_domain(token: String, domain_id: String, handler: Int -> Dynamic -> Void) {
-    CivoHttp.delete(token, '$path/$domain_id', handler);
+  public function updateDomain(id:String, name:String, handler:Int->Dynamic->Void):Void {
+    CivoHttp.put(client, '$PATH/$id', handler, {name: name});
   }
 
-  static public function list_dns(token: String, domain_id: String, handler: Int -> Dynamic -> Void) {
-    CivoHttp.get(token, '$path/$domain_id/records', handler);
+  public function deleteDomain(id:String, handler:Int->Dynamic->Void):Void {
+    CivoHttp.delete(client, '$PATH/$id', handler);
   }
 
-  static public function create_dns(token: String, domain_id: String, params: DnsParams, handler: Int -> Dynamic -> Void) {
-    CivoHttp.post(token, '$path/$domain_id/records', handler, params);
+  public function listRecords(domainId:String, handler:Int->Dynamic->Void):Void {
+    CivoHttp.get(client, '$PATH/$domainId/records', handler);
   }
 
-  static public function update_dns(token: String, domain_id: String, dns_id: String, params: DnsParams, handler: Int -> Dynamic -> Void) {
-    CivoHttp.put(token, '$path/$domain_id/records/$dns_id', handler, params);
+  public function createRecord(domainId:String, params:Dynamic, handler:Int->Dynamic->Void):Void {
+    CivoHttp.post(client, '$PATH/$domainId/records', handler, params);
   }
 
-  static public function delete_dns(token: String, domain_id: String, dns_id: String, handler: Int -> Dynamic -> Void) {
-    CivoHttp.delete(token, '$path/$domain_id/records/$dns_id', handler);
+  public function updateRecord(domainId:String, id:String, params:Dynamic, handler:Int->Dynamic->Void):Void {
+    CivoHttp.put(client, '$PATH/$domainId/records/$id', handler, params);
   }
-}
 
-typedef DnsParams = {
-  type: String,   // the choice of RR type from a, cname, mx or txt
-  name: String,   // the portion before the domain name (e.g. www) or an @ for the apex/root domain (you cannot use an A record with an amex/root domain)
-  value: String,  // the IP address (A or MX), hostname (CNAME or MX) or text value (TXT) to serve for this record
-  ?priority: Int, // useful for MX records only, the priority mail should be attempted it (defaults to 10)
-  ?ttl: Int       // how long caching DNS servers should cache this record for, in seconds (the minimum is 600 and the default if unspecified is 600)
+  public function deleteRecord(domainId:String, id:String, handler:Int->Dynamic->Void):Void {
+    CivoHttp.delete(client, '$PATH/$domainId/records/$id', handler);
+  }
 }

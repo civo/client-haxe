@@ -1,0 +1,13 @@
+{
+  "name": "civo",
+  "version": "__VERSION__",
+  "description": "Civo cloud API client (Haxe → Node.js)",
+  "main": "civo.js",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/civo/client-haxe.git"
+  },
+  "keywords": ["civo", "cloud", "api"],
+  "author": "Jahred Love"
+}

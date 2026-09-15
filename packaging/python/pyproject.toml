@@ -1,0 +1,7 @@
+[project]
+name = "civo"
+version = "__VERSION__"
+description = "Civo cloud API client (Haxe → Python)"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.8"

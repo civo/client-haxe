@@ -1,0 +1,8 @@
+-cp src
+-dce full
+-main Civo
+-lib tink_http
+-lib hxjava
+-cp overrides
+-java bin/java
+-D no-compilation

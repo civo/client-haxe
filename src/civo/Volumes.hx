@@ -1,46 +1,37 @@
 package civo;
 
+import Civo;
 import civo.net.CivoHttp;
-
-/*
-  We provide a flexible size additional storage service for our 
-  Instances called volumes. This creates and attaches an additional 
-  virtual disk to the instance, allowing you to put backups or 
-  database files on the separate volume and later move the volume 
-  to another instance.
-*/
 
 @:expose
 class Volumes {
-  static var path = '/volumes';
+  static inline var PATH = "/volumes";
+  var client:Civo;
 
-  static public function create(token: String, params: VolumeParams, handler: Int -> Dynamic -> Void) {
-    CivoHttp.post(token, path, handler, params);
+  public function new(client:Civo) {
+    this.client = client;
   }
 
-  static public function list(token: String, handler: Int -> Dynamic -> Void) {
-    CivoHttp.get(token, path, handler);
+  public function create(params:Dynamic, handler:Int->Dynamic->Void):Void {
+    CivoHttp.post(client, PATH, handler, params);
   }
 
-  static public function resize(token: String, volume_id: String, size_gb: Int, handler: Int -> Dynamic -> Void) {
-    CivoHttp.put(token, '$path/$volume_id/resize', handler, {size_gb: size_gb});
+  public function list(handler:Int->Dynamic->Void, ?region:String):Void {
+    CivoHttp.get(client, PATH, handler, region != null ? {region: region} : {});
   }
 
-  static public function attach(token: String, volume_id: String, instance_id: String, handler: Int -> Dynamic -> Void) {
-    CivoHttp.put(token, '$path/$volume_id/attach', handler, {instance_id: instance_id});
+  public function attach(id:String, instanceId:String, handler:Int->Dynamic->Void, ?region:String):Void {
+    var params:Dynamic = {instance_id: instanceId};
+    if (region != null)
+      Reflect.setField(params, "region", region);
+    CivoHttp.put(client, '$PATH/$id/attach', handler, params);
   }
 
-  static public function detach(token: String, volume_id: String, handler: Int -> Dynamic -> Void) {
-    CivoHttp.put(token, '$path/$volume_id/detach', handler);
+  public function detach(id:String, handler:Int->Dynamic->Void, ?region:String):Void {
+    CivoHttp.put(client, '$PATH/$id/detach', handler, region != null ? {region: region} : {});
   }
 
-  static public function delete(token: String, volume_id: String, handler: Int -> Dynamic -> Void) {
-    CivoHttp.delete(token, '$path/$volume_id', handler);
+  public function delete(id:String, handler:Int->Dynamic->Void, ?region:String):Void {
+    CivoHttp.delete(client, '$PATH/$id', handler, region != null ? {region: region} : {});
   }
-}
-
-typedef VolumeParams = {
-  name: String,     // A name that you wish to use to refer to this volume (required)
-  size_gb: Int,     // A minimum of 1 and a maximum of your available disk space from your quota specifies the size of the volume in gigabytes (required).
-  ?bootable: Bool   // Mark the volume as bootable with a boolean (optional; defaults to false).
 }
