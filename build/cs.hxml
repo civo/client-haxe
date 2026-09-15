@@ -1,0 +1,7 @@
+-cp src
+-dce full
+-main Civo
+-lib tink_http
+-lib hxcs
+-cs bin/cs
+-D no-compilation

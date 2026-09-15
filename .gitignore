@@ -1,1 +1,8 @@
+.haxelib/
+bin/
+dist/
 test/nodejs/node_modules
+.DS_Store
+*.bak
+civo-*.tar
+libs/*.jar
