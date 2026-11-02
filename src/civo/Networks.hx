@@ -1,30 +1,39 @@
 package civo;
 
+import Civo;
 import civo.net.CivoHttp;
-
-/*
-  To manage the private networks for an account, there are a 
-  set of APIs for listing them, as well as adding, renaming 
-  and removing them by ID.
-*/
 
 @:expose
 class Networks {
-  static var path = '/networks';
+  static inline var PATH = "/networks";
+  var client:Civo;
 
-  static public function create(token: String, label: String, handler: Int -> Dynamic -> Void) {
-    CivoHttp.post(token, path, handler, {label: label});
+  public function new(client:Civo) {
+    this.client = client;
   }
 
-  static public function list(token: String, handler: Int -> Dynamic -> Void) {
-    CivoHttp.get(token, path, handler);
+  public function create(label:String, handler:Int->Dynamic->Void, ?opts:Dynamic):Void {
+    var params:Dynamic = opts != null ? opts : {};
+    Reflect.setField(params, "label", label);
+    CivoHttp.post(client, PATH, handler, params);
   }
 
-  static public function rename(token: String, network_id: String, label: String, handler: Int -> Dynamic -> Void) {
-    CivoHttp.put(token, '$path/$network_id', handler, {label: label});
+  public function list(handler:Int->Dynamic->Void, ?region:String):Void {
+    CivoHttp.get(client, PATH, handler, region != null ? {region: region} : {});
   }
 
-  static public function delete(token: String, network_id: String, handler: Int -> Dynamic -> Void) {
-    CivoHttp.delete(token, '$path/$network_id', handler);
+  public function get(id:String, handler:Int->Dynamic->Void, ?region:String):Void {
+    CivoHttp.get(client, '$PATH/$id', handler, region != null ? {region: region} : {});
+  }
+
+  public function rename(id:String, label:String, handler:Int->Dynamic->Void, ?region:String):Void {
+    var params:Dynamic = {label: label};
+    if (region != null)
+      Reflect.setField(params, "region", region);
+    CivoHttp.put(client, '$PATH/$id', handler, params);
+  }
+
+  public function delete(id:String, handler:Int->Dynamic->Void, ?region:String):Void {
+    CivoHttp.delete(client, '$PATH/$id', handler, region != null ? {region: region} : {});
   }
 }

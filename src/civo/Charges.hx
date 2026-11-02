@@ -1,24 +1,22 @@
 package civo;
 
+import Civo;
 import civo.net.CivoHttp;
-
-/*
-  The system tracks usage of paid service on an hourly basis. 
-  It doesn't track how much to charge for any particular product, 
-  but it will report for each instance, IP address and snapshot 
-  the amount of hours it's in use for.
-*/
 
 @:expose
 class Charges {
-  static var path = '/charges';
+  var client:Civo;
 
-  static public function list(token: String, ?dateRange: ChargesParams, handler: Int -> Dynamic -> Void) {
-    CivoHttp.get(token, path, handler, dateRange);
+  public function new(client:Civo) {
+    this.client = client;
   }
-}
 
-typedef ChargesParams = {
-  ?from: String, // The from date in RFC 3339 format (default to the start of the current month)
-  ?to: String    // The to date in RFC 3339 format (defaults to the current time)
+  public function list(handler:Int->Dynamic->Void, ?from:String, ?to:String):Void {
+    var params:Dynamic = {};
+    if (from != null)
+      Reflect.setField(params, "from", from);
+    if (to != null)
+      Reflect.setField(params, "to", to);
+    CivoHttp.get(client, "/charges", handler, params);
+  }
 }

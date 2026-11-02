@@ -1,11 +1,10 @@
-import lib from "../../../bin/nodejs/main.js";
-import token from '../__config';
+import client from '../client';
 
 var domain, domain_id, dns_id;
 
-describe('Dns.list_domains', () => {
+describe('Dns.listDomains', () => {
   test('it should return a list of domains', done => {
-    lib.civo.Dns.list_domains(token(), function(status, data) {
+    client().dns.listDomains(function(status, data) {
       expect(status).toBe(200);
       expect(data).toBeInstanceOf(Array);
       if (data.length > 0) {
@@ -19,10 +18,10 @@ describe('Dns.list_domains', () => {
   });
 });
 
-describe('Dns.create_domain', () => {
+describe('Dns.createDomain', () => {
   test('it should return a newly created domain', done => {
     var name = "my-test-domain.com";
-    lib.civo.Dns.create_domain(token(), name, function(status, data) {
+    client().dns.createDomain(name, function(status, data) {
       expect(status).toBe(200);
       domain = data;
       expect(data).toHaveProperty('id');
@@ -34,10 +33,10 @@ describe('Dns.create_domain', () => {
   });
 });
 
-describe('Dns.update_domain', () => {
+describe('Dns.updateDomain', () => {
   test('it should modify a domain', done => {
-    var name = "my-other-domain.com"
-    lib.civo.Dns.update_domain(token(), domain.id, name, function(status, data) {
+    var name = "my-other-domain.com";
+    client().dns.updateDomain(domain.id, name, function(status, data) {
       expect(status).toBe(200);
       domain = data;
       expect(data).toHaveProperty('id');
@@ -49,9 +48,9 @@ describe('Dns.update_domain', () => {
   });
 });
 
-describe('Dns.delete_domain', () => {
+describe('Dns.deleteDomain', () => {
   test('it should delete a domain', done => {
-    lib.civo.Dns.delete_domain(token(), domain.id, function(status, data) {
+    client().dns.deleteDomain(domain.id, function(status, data) {
       expect(status).toBe(200);
       expect(data.result).toBe('success');
       done();
@@ -59,16 +58,17 @@ describe('Dns.delete_domain', () => {
   });
 });
 
-describe('Dns.create_dns', () => {
+describe('Dns.createRecord', () => {
   test('it should return a newly created dns entry', done => {
     var name = "my-test-domain.com";
-    lib.civo.Dns.create_domain(token(), name, function(status, data) {
+    var civo = client();
+    civo.dns.createDomain(name, function(status, data) {
       expect(status).toBe(200);
       domain_id = data.id;
       var params = {type: 'a', name: 'www', value: '96.0.0.1'};
-      lib.civo.Dns.create_dns(token(), domain_id, params, function(status, data) {
+      civo.dns.createRecord(domain_id, params, function(status, data) {
         expect(status).toBe(200);
-        dns_id = data.id
+        dns_id = data.id;
         expect(data).toHaveProperty('id');
         expect(data.domain_id).toBe(domain_id);
         expect(data.value).toBe('96.0.0.1');
@@ -78,9 +78,9 @@ describe('Dns.create_dns', () => {
   });
 });
 
-describe('Dns.list_dns', () => {
+describe('Dns.listRecords', () => {
   test('it should return a list of dns entries', done => {
-    lib.civo.Dns.list_dns(token(), domain_id, function(status, data) {
+    client().dns.listRecords(domain_id, function(status, data) {
       expect(status).toBe(200);
       expect(data).toBeInstanceOf(Array);
       if (data.length > 0) {
@@ -94,31 +94,30 @@ describe('Dns.list_dns', () => {
   });
 });
 
-describe('Dns.update_dns', () => {
+describe('Dns.updateRecord', () => {
   test('it should modify a dns entry', done => {
-    var name = "my-other-domain.com"
     var params = {value: '96.0.0.2'};
-    lib.civo.Dns.update_dns(token(), domain_id, dns_id, params, function(status, data) {
+    client().dns.updateRecord(domain_id, dns_id, params, function(status, data) {
       expect(status).toBe(200);
       expect(data).toHaveProperty('id');
-        expect(data.domain_id).toBe(domain_id);
+      expect(data.domain_id).toBe(domain_id);
       expect(data.value).toBe('96.0.0.2');
       done();
     });
   });
 });
 
-describe('Dns.delete_dns', () => {
+describe('Dns.deleteRecord', () => {
   test('it should delete a dns entry', done => {
-    lib.civo.Dns.delete_dns(token(), domain_id, dns_id, function(status, data) {
+    var civo = client();
+    civo.dns.deleteRecord(domain_id, dns_id, function(status, data) {
       expect(status).toBe(200);
       expect(data.result).toBe('success');
-      done();
-    });
-    lib.civo.Dns.delete_domain(token(), domain_id, function(status, data) {
-      expect(status).toBe(200);
-      expect(data.result).toBe('success');
-      done();
+      civo.dns.deleteDomain(domain_id, function(status, data) {
+        expect(status).toBe(200);
+        expect(data.result).toBe('success');
+        done();
+      });
     });
   });
 });

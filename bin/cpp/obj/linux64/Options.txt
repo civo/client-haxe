@@ -1,3 +1,0 @@
-hxcpp_api_level=400
-hxcpp_smart_strings=1
-hxcpp=/home/jahred/haxelib/hxcpp/4,0,64/

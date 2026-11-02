@@ -5,8 +5,8 @@
 
 --each
 
--lib hxnodejs 
--js bin/nodejs/main.js
+-lib hxnodejs
+-js bin/nodejs/civo.js
 
 --next
 
@@ -14,16 +14,25 @@
 
 --next
 
+-lua bin/lua/civo.lua
+
+--next
+
+-python bin/python/civo.py
+
+--next
+
 -cpp bin/cpp
 
 --next
 
--lua bin/lua/civo.lua
+-lib hxcs
+-cs bin/cs
+-D no-compilation
 
-# --next
+--next
 
-# -java bin/java
-
-# --next
-
-# -cs bin/cs
+-lib hxjava
+-cp overrides
+-java bin/java
+-D no-compilation

@@ -1,35 +1,34 @@
 package civo;
 
+import Civo;
 import civo.net.CivoHttp;
-
-/*
-  To manage the SSH keys for an account that are used for 
-  logging in to instances, there are a set of APIs for 
-  listing the SSH public keys currently stored, as well 
-  as adding and removing them by name.
-*/
 
 @:expose
 class Ssh {
-  static var path = '/sshkeys';
+  static inline var PATH = "/sshkeys";
+  var client:Civo;
 
-  static public function list(token: String, handler: Int -> Dynamic -> Void) {
-    CivoHttp.get(token, path, handler);
+  public function new(client:Civo) {
+    this.client = client;
   }
 
-  static public function get(token: String, ssh_id: String, handler: Int -> Dynamic -> Void) {
-    CivoHttp.get(token, '$path/$ssh_id', handler);
+  public function list(handler:Int->Dynamic->Void):Void {
+    CivoHttp.get(client, PATH, handler);
   }
 
-  static public function upload(token: String, name: String, public_key: String, handler: Int -> Dynamic -> Void) {
-    CivoHttp.post(token, path, handler, {name: name, public_key: public_key});
+  public function get(id:String, handler:Int->Dynamic->Void):Void {
+    CivoHttp.get(client, '$PATH/$id', handler);
   }
 
-  static public function update(token: String, ssh_id: String, name: String, handler: Int -> Dynamic -> Void) {
-    CivoHttp.put(token, '$path/$ssh_id', handler, {name: name});
+  public function create(params:Dynamic, handler:Int->Dynamic->Void):Void {
+    CivoHttp.post(client, PATH, handler, params);
   }
 
-  static public function delete(token: String, ssh_id: String, handler: Int -> Dynamic -> Void) {
-    CivoHttp.delete(token, '$path/$ssh_id', handler);
+  public function update(id:String, params:Dynamic, handler:Int->Dynamic->Void):Void {
+    CivoHttp.put(client, '$PATH/$id', handler, params);
+  }
+
+  public function delete(id:String, handler:Int->Dynamic->Void):Void {
+    CivoHttp.delete(client, '$PATH/$id', handler);
   }
 }

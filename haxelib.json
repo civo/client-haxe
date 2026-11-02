@@ -1,0 +1,14 @@
+{
+  "name": "civo",
+  "url": "https://github.com/civo/client-haxe",
+  "license": "MIT",
+  "tags": ["civo", "cloud", "api"],
+  "description": "Haxe client for the Civo cloud API (multi-target).",
+  "version": "1.0.0",
+  "classPath": "src/",
+  "releasenote": "Full Civo API v2 refresh; seven language dist artifacts.",
+  "contributors": ["Lazarus404"],
+  "dependencies": {
+    "tink_http": ""
+  }
+}

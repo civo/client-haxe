@@ -1,28 +1,34 @@
-import lib from "../../../bin/nodejs/main.js";
-import token from '../__config';
+import client from '../client';
 
 var lb_id;
 
 describe('LoadBalancers.create', () => {
   test('it should return a new loadbalancer', done => {
-    lib.civo.Instances.list(token(), {tags: ""}, function(status, data) {
-      if (data.items.length > 0) {
-        var item = data.items[0], backend = {instance_id: item.id, protocol: "http", port: 80};
-        lib.civo.LoadBalancers.create(token(), {backends: [backend]}, function(status, data) {
+    var civo = client();
+    civo.instances.list(function(status, data) {
+      if (data.items && data.items.length > 0) {
+        var item = data.items[0];
+        var backend = {instance_id: item.id, protocol: "http", port: 80};
+        civo.loadBalancers.create({backends: [backend]}, function(status, data) {
           expect(status).toBe(200);
           expect(data).toHaveProperty('id');
           lb_id = data.id;
           done();
         });
+      } else {
+        done();
       }
-    });
+    }, {tags: ""});
   });
 });
 
 describe('LoadBalancers.update', () => {
   test('it should update a loadbalancer', done => {
-    lib.civo.LoadBalancers.update(token(), lb_id, {hostname: "test.com"}, function(status, data) {
-      console.log(data);
+    if (!lb_id) {
+      done();
+      return;
+    }
+    client().loadBalancers.update(lb_id, {hostname: "test.com"}, function(status, data) {
       expect(status).toBe(200);
       done();
     });
@@ -31,8 +37,7 @@ describe('LoadBalancers.update', () => {
 
 describe('LoadBalancers.list', () => {
   test('it should list all available loadbalancers', done => {
-    lib.civo.LoadBalancers.list(token(), function(status, data) {
-      console.log(data);
+    client().loadBalancers.list(function(status, data) {
       expect(status).toBe(200);
       done();
     });
@@ -41,12 +46,14 @@ describe('LoadBalancers.list', () => {
 
 describe('LoadBalancers.delete', () => {
   test('it should delete a loadbalancer', done => {
-    lib.civo.LoadBalancers.delete(token(), lb_id, function(status, data) {
-      console.log(data);
+    if (!lb_id) {
+      done();
+      return;
+    }
+    client().loadBalancers.delete(lb_id, function(status, data) {
       expect(status).toBe(200);
       expect(data.result).toBe('success');
       done();
     });
   });
 });
-

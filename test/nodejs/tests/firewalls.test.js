@@ -1,24 +1,29 @@
-import lib from "../../../bin/nodejs/main.js";
-import token from '../__config';
+import client from '../client';
 
 var fw_id;
 
 describe('Firewalls.create', () => {
   test('it should return a new firewall', done => {
-    lib.civo.Firewalls.create(token(), "my-firewall", function(status, data) {
+    var civo = client();
+    civo.networks.list(function(status, networks) {
       expect(status).toBe(200);
-      expect(data).toHaveProperty('id');
-      fw_id = data.id;
-      expect(data).toHaveProperty('name');
-      expect(data.result).toBe('success');
-      done();
+      expect(networks.length).toBeGreaterThan(0);
+      var networkId = networks[0].id;
+      civo.firewalls.create("my-firewall", networkId, function(status, data) {
+        expect(status).toBe(200);
+        expect(data).toHaveProperty('id');
+        fw_id = data.id;
+        expect(data).toHaveProperty('name');
+        expect(data.result).toBe('success');
+        done();
+      });
     });
   });
 });
 
-describe('Firewalls.create_rules', () => {
+describe('Firewalls.createRule', () => {
   test('it should return new firewall rules', done => {
-    lib.civo.Firewalls.create_rules(token(), fw_id, {start_port: 8080}, function(status, data) {
+    client().firewalls.createRule(fw_id, {start_port: 8080}, function(status, data) {
       expect(status).toBe(200);
       expect(data).toHaveProperty('id');
       expect(data.start_port).toBe("8080");
@@ -27,9 +32,9 @@ describe('Firewalls.create_rules', () => {
   });
 });
 
-describe('Firewalls.get_rules', () => {
+describe('Firewalls.rules', () => {
   test('it should return a list of firewall rules', done => {
-    lib.civo.Firewalls.get_rules(token(), fw_id, function(status, data) {
+    client().firewalls.rules(fw_id, function(status, data) {
       expect(status).toBe(200);
       expect(data).toBeInstanceOf(Array);
       if (data.length > 0) {
@@ -44,7 +49,7 @@ describe('Firewalls.get_rules', () => {
 
 describe('Firewalls.list', () => {
   test('it should return a list of firewalls', done => {
-    lib.civo.Firewalls.list(token(), function(status, data) {
+    client().firewalls.list(function(status, data) {
       expect(status).toBe(200);
       expect(data).toBeInstanceOf(Array);
       if (data.length > 0) {
@@ -59,7 +64,7 @@ describe('Firewalls.list', () => {
 
 describe('Firewalls.delete', () => {
   test('it should delete a firewall', done => {
-    lib.civo.Firewalls.delete(token(), fw_id, function(status, data) {
+    client().firewalls.delete(fw_id, function(status, data) {
       expect(status).toBe(200);
       expect(data.result).toBe('success');
       done();

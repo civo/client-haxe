@@ -1,41 +1,59 @@
 package civo;
 
+import Civo;
 import civo.net.CivoHttp;
 
 @:expose
 class Firewalls {
-  static var path = '/firewalls';
+  static inline var PATH = "/firewalls";
+  var client:Civo;
 
-  static public function create(token: String, name: String, handler: Int -> Dynamic -> Void) {
-    CivoHttp.post(token, path, handler, {name: name});
+  public function new(client:Civo) {
+    this.client = client;
   }
 
-  static public function create_rules(token: String, firewall_id: String, params: FirewallParams, handler: Int -> Dynamic -> Void) {
-    CivoHttp.post(token, '$path/$firewall_id/rules', handler, params);
+  public function create(name:String, networkId:String, handler:Int->Dynamic->Void, ?region:String, ?extra:Dynamic):Void {
+    var params:Dynamic = extra != null ? extra : {};
+    Reflect.setField(params, "name", name);
+    Reflect.setField(params, "network_id", networkId);
+    if (region != null)
+      Reflect.setField(params, "region", region);
+    CivoHttp.post(client, PATH, handler, params);
   }
 
-  static public function get_rules(token: String, firewall_id: String, handler: Int -> Dynamic -> Void) {
-    CivoHttp.get(token, '$path/$firewall_id/rules', handler);
+  public function list(handler:Int->Dynamic->Void, ?region:String):Void {
+    CivoHttp.get(client, PATH, handler, region != null ? {region: region} : {});
   }
 
-  static public function list(token: String, handler: Int -> Dynamic -> Void) {
-    CivoHttp.get(token, path, handler);
+  public function get(id:String, handler:Int->Dynamic->Void, ?region:String):Void {
+    CivoHttp.get(client, '$PATH/$id', handler, region != null ? {region: region} : {});
   }
 
-  static public function delete(token: String, firewall_id: String, handler: Int -> Dynamic -> Void) {
-    CivoHttp.delete(token, '$path/$firewall_id', handler);
+  public function update(id:String, params:Dynamic, handler:Int->Dynamic->Void, ?region:String):Void {
+    if (region != null)
+      Reflect.setField(params, "region", region);
+    CivoHttp.put(client, '$PATH/$id', handler, params);
   }
 
-  static public function delete_rule(token: String, firewall_id: String, rule_id: String, handler: Int -> Dynamic -> Void) {
-    CivoHttp.delete(token, '$path/$firewall_id/rules/$rule_id', handler);
+  public function createRule(firewallId:String, params:Dynamic, handler:Int->Dynamic->Void):Void {
+    CivoHttp.post(client, '$PATH/$firewallId/rules', handler, params);
   }
-}
 
-typedef FirewallParams = {
-  start_port: Int,    // the start of the port range to configure for this rule (or the single port if required)
-  ?end_port: Int,     // the end of the port range (this is optional, by default it will only apply to the single port listed in start_port)
-  ?protocol: String,  // the protocol choice from tcp, udp or icmp (the default if unspecified is tcp)
-  ?cidr: String,      // the IP address of the other end (i.e. not your instance) to affect, or a valid network CIDR (defaults to being globally applied, i.e. 0.0.0.0/0)
-  ?direction: String, // will this rule affect inbound or outbound traffic (by default this is inbound)
-  ?label: String      // a string that will be the displayed name/reference for this rule (optional)
+  public function rules(firewallId:String, handler:Int->Dynamic->Void, ?region:String):Void {
+    CivoHttp.get(client, '$PATH/$firewallId/rules', handler, region != null ? {region: region} : {});
+  }
+
+  public function updateRule(firewallId:String, ruleId:String, params:Dynamic, handler:Int->Dynamic->Void, ?region:String):Void {
+    if (region != null)
+      Reflect.setField(params, "region", region);
+    CivoHttp.put(client, '$PATH/$firewallId/rules/$ruleId', handler, params);
+  }
+
+  public function delete(id:String, handler:Int->Dynamic->Void, ?region:String):Void {
+    CivoHttp.delete(client, '$PATH/$id', handler, region != null ? {region: region} : {});
+  }
+
+  public function deleteRule(firewallId:String, ruleId:String, handler:Int->Dynamic->Void, ?region:String):Void {
+    CivoHttp.delete(client, '$PATH/$firewallId/rules/$ruleId', handler, region != null ? {region: region} : {});
+  }
 }

@@ -1,0 +1,11 @@
+{
+  "name": "civo/civo",
+  "description": "Civo cloud API client (Haxe → PHP)",
+  "type": "library",
+  "license": "MIT",
+  "authors": [{ "name": "Jahred Love" }],
+  "require": {
+    "php": ">=7.4"
+  },
+  "version": "__VERSION__"
+}

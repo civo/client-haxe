@@ -1,11 +1,10 @@
-import lib from "../../../bin/nodejs/main.js";
-import token from '../__config';
+import client from '../client';
 
-var instance_id, size;
+var instance_id, size, disk_image_id;
 
-describe('Instances.available_size', () => {
+describe('Instances.availableSizes', () => {
   test('it should return a list of available sizes', done => {
-    lib.civo.Instances.available_sizes(token(), function(status, data) {
+    client().instances.availableSizes(function(status, data) {
       expect(status).toBe(200);
       expect(data).toBeInstanceOf(Array);
       if (data.length > 0) {
@@ -21,13 +20,18 @@ describe('Instances.available_size', () => {
 
 describe('Instances.create', () => {
   test('it should return a new instance', done => {
-    var host = "my-test.com", tmpl_id;
-    lib.civo.Templates.list(token(), function(status, data) {
+    var civo = client();
+    var host = "my-test.com";
+    civo.diskImages.list(function(status, data) {
       expect(status).toBe(200);
       expect(data).toBeInstanceOf(Array);
       if (data.length > 0)
-        tmpl_id = data[0].id;
-      lib.civo.Instances.create(token(), {size: size.name, hostname: host, template_id: tmpl_id}, function(status, data) {
+        disk_image_id = data[0].id;
+      civo.instances.create({
+        size: size.name,
+        hostname: host,
+        disk_image: disk_image_id
+      }, function(status, data) {
         expect(status).toBe(200);
         expect(data).toHaveProperty('id');
         instance_id = data.id;
@@ -39,18 +43,18 @@ describe('Instances.create', () => {
 
 describe('Instances.list', () => {
   test('it should return a list of instances', done => {
-    lib.civo.Instances.list(token(), {tags: ""}, function(status, data) {
+    client().instances.list(function(status, data) {
       expect(status).toBe(200);
       expect(data.page).toBe(1);
       expect(data.per_page).toBe(20);
       done();
-    });
+    }, {tags: ""});
   });
 });
 
 describe('Instances.get', () => {
   test('it should return an instance', done => {
-    lib.civo.Instances.get(token(), instance_id, function(status, data) {
+    client().instances.get(instance_id, function(status, data) {
       expect(status).toBe(200);
       expect(data).toHaveProperty('id');
       expect(data.id).toBe(instance_id);
@@ -61,7 +65,7 @@ describe('Instances.get', () => {
 
 describe('Instances.delete', () => {
   test('it should delete an instance', done => {
-    lib.civo.Instances.delete(token(), instance_id, function(status, data) {
+    client().instances.delete(instance_id, function(status, data) {
       expect(status).toBe(200);
       expect(data.result).toBe('success');
       done();

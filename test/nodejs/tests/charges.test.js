@@ -1,8 +1,7 @@
-import lib from "../../../bin/nodejs/main.js";
-import token from '../__config';
+import client from '../client';
 
 test('it should return a list of account charges', done => {
-  lib.civo.Charges.list(token(), {}, function(status, data) {
+  client().charges.list(function(status, data) {
     expect(status).toBe(200);
     expect(data).toBeInstanceOf(Array);
     if (data.length > 0) {
